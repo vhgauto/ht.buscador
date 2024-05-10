@@ -1,0 +1,64 @@
+/*-- scss:defaults --*/
+
+// https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide
+
+// colores
+
+$cr: #EE4121;
+$ca: #FFC10E;
+$cn: #000000;
+$cb: #FFFFFF;
+$cg: #0F0F0F;
+
+// Ubuntu
+@import url('ubuntu', 'fuentes/Ubuntu-Regular.ttf');
+
+// Friz Quadrata
+@import url('friz', 'fuentes/Friz Quadrata Bold.otf');
+
+/*-- scss:rules --*/
+
+// links de color blanco ($cb)
+a {
+  color: $cb;
+  text-decoration-color: transparent
+}
+
+// cuando paso el mouse sobre un link, pasa de blanco ($cb) a amarillo ($ca)
+a:hover {
+    color: $ca;
+    text-decoration-color: $cr;
+}
+
+// cambiar de color al pasar el mouse sobre los encabezados
+.header:hover {
+  background-color: $cg;
+}
+
+// remuevo el título
+.title {
+    display: none;
+}
+
+// https://glin.github.io/reactable/articles/custom-sort-icons.html#custom-sort-icons-using-css-pseudo-elements
+// personalizo la flechita que ordena la columna
+
+.rt-th[aria-sort=descending] .rt-sort-left:after, .rt-th[aria-sort=descending] .rt-sort-right:after {
+    content: "\2193";
+    color: $cr;
+}
+
+.rt-th[aria-sort=ascending] .rt-sort-left:after, .rt-th[aria-sort=ascending] .rt-sort-right:after {
+    content: "\2193";
+    color: $cr;
+}
+
+
+// acomodar verticalemte el contenido de una columna
+// https://github.com/quarto-dev/quarto-cli/discussions/1386#discussioncomment-3851908
+.v-center-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}

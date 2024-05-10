@@ -1,0 +1,15 @@
+name: ht.buscador
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # R
+  - r-base=4.3.3
+  - r-tidyverse=2.0.0
+  - r-reactable=0.4.4
+  - r-htmltools=0.5.8.1
+  - r-tippy=0.1.0
+  # python
+  - pandas=2.2.2
+  - spotipy=2.23.0
+  - snakemake=8.11.3
