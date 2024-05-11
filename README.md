@@ -22,3 +22,4 @@ El lenguaje de programación principal es <code>R</code>. El manejo de datos uti
 
 La tabla interactiva se creó con el paquete <code>[{reactable}](https://glin.github.io/reactable/)</code>.
 
+El procesamiento de los datos tiene ejecución automática mediante <b>GitHub Actions</b>.
