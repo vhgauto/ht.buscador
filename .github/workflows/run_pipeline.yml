@@ -23,8 +23,8 @@ jobs:
           activate-environment: turb
           environment-file: environment.yml
           auto-activate-base: false
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      #- name: Set up Quarto
+      #  uses: quarto-dev/quarto-actions/setup@v2
       - name: Render Quarto
         run: quarto render index.qmd
       - name: Configuro git en el runner
