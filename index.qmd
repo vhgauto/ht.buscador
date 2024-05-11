@@ -1,0 +1,87 @@
+---
+title: "Buscador Hoy Trasnoche"
+format:
+  html:
+    include-in-header: 
+      - text: |
+          <link rel="shortcut icon" href="img/favicon.png" />
+    backgroundcolor: "#000000"
+    fontcolor: "#FFFFFF"
+    fontsize: 17px
+    mainfont: Ubuntu
+    link-external-newwindow: true
+    theme: 
+      - extras/mis_estilos.scss
+    margin-left: 20px
+    margin-right: 20px
+    embed-resources: true
+editor_options: 
+  chunk_output_type: console
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r inicio}
+source("scripts/soporte.R")
+
+source("scripts/datos.R")
+```
+
+::::: column-screen
+:::: {.columns .v-center-container}
+::: {.column width="20%"}
+![](img/logo.jpeg)
+:::
+
+::: {.column width="15%"}
+:::
+
+::: {.column width="40%"}
+`r ht` es el único [podcast](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e) de cine.
+
+Desde 2017 [<b>Fiorella Sargenti</b>](https://www.instagram.com/fiosargenti) y [<b>Santigo Calori</b>](https://www.instagram.com/sancalori/) nos alegran todos los viernes.
+
+Pueden interactuar con la tabla ordenando las filas o usando el buscador.
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="20%"}
+<p style='text-align:right;'>Autor: <b>Víctor Gauto</b><br>
+`r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`/vhgauto<br>
+Ver en `r link_github`</p>
+:::
+
+::::
+:::::
+
+```{r tabla}
+#| column: screen
+
+source("scripts/tabla.R")
+r
+```
+
+<br> <br>
+
+::: column-body-outset
+::: {.columns .v-center-container}
+::: {.column width="30%"}
+![](img/logo.jpeg)
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+Autor: <b>Víctor Gauto</b><br>
+`r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`/vhgauto
+
+Ver en `r link_github`
+:::
+:::
+:::
+
+<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>`r ahora_label`</span>
