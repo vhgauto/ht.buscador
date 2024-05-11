@@ -7,23 +7,34 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
+# credenciales
+import requests
+import base64
+import os
+
 # manejo de datos
 import pandas as pd
 
-# acceso a las credenciales
-import os
+# función que genera un token a partir de las credenciales de Spotify
 
-# credenciales
+def refresh_access_token(refresh_token):
+    client_id = os.environ['SPOTIPY_CLIENT_ID']
+    client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
+    payload = {
+        'grant_type': 'refresh_token',
+        'refresh_token': refresh_token,
+    }
+    auth_header = {'Authorization': 'Basic ' + base64.b64encode((client_id + ':' + client_secret).encode()).decode()}
+    response = requests.post('https://accounts.spotify.com/api/token', data=payload, headers=auth_header)
+    return response.json().get('access_token')
 
-s_client_id = os.environ['CLIENT_ID']
-s_client_secret = os.environ['CLIENT_SECRET']
+# client_id = os.environ['SPOTIPY_CLIENT_ID']
+# client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
+refresh_token = os.environ['SPOTIPY_REFRESH_TOKEN']
+new_access_token = refresh_access_token(refresh_token)
 
-sp = spotipy.Spotify(
-  auth_manager = SpotifyOAuth(
-    client_id = s_client_id,
-    client_secret = s_client_secret,
-    redirect_uri = "http://localhost:1410/",
-    scope = "user-read-playback-position"))
+# configuro acceso a Spotify
+sp = spotipy.Spotify(auth=new_access_token)
 
 # ID de Hoy Trasnoche en Spotify
 ht_id = "6C4MdNWQSPhmzBlIVau30e"

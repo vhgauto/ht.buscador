@@ -12,6 +12,7 @@ jobs:
     env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        SPOTIPY_REFRESH_TOKEN: ${{ secrets.SPOTIPY_REFRESH_TOKEN }}
     steps:
       - run: echo "🎉 Tareas activadas automáticamente debido a un evento ${{ github.event_name }}"
       - run: echo "🐧 Las tareas están corriendo en un servidor ${{ runner.os }} alojado en GitHub"
