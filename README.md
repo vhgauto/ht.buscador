@@ -1,22 +1,20 @@
 # Tabla interactiva HOY TRASNOCHE
 
-<img src="img/logo.jpeg" width=50% align="center">
+<p align="center">
+<img src="img/logo.jpeg" width=30% align="center">
+</p>
 
-[HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único podcast de cine.
+[HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único podcast de cine. Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori).
 
-Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori).
+El sitio web contiene los episodios, fecha de publicación y duración, junto con la película comentada, y los links para escuchar los episodios.
 
-El sitio web que contiene los episodios, fecha y duración, junto con la película comentada, y los links para escuchar los episodios.
-
-La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración y nombre de película, o realizar una búsqueda por nombre de episodio o película.
+La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración y nombre de película, o realizar una búsqueda por nombre de episodio/película.
 
 # [LINK](https://vhgauto.github.io/ht.buscador/)
 
 # Descripción
 
-El lenguaje de programación principal es <code>R</code>. 
-
-El sitio web combina datos de Spotify y Letterboxd, con ejecución automática via GitHub Actions y creación del sitio web mediante Quarto.
+Se combinan lenguajes de programación en R (principalmente) y Python. El sitio web combina datos de Spotify y Letterboxd, con ejecución automática via GitHub Actions y creación del sitio web mediante Quarto.
 
 ## Datos
 
@@ -28,23 +26,24 @@ La transformación de datos se llevó a cabo con los paquetes de <code>[{tidyver
 
 ## Creación de tabla interactiva
 
-La tabla se creó con el paquete <code>[{reactable}](https://glin.github.io/reactable/)</code>, que permite agregar un buscador y arreglar las columnas de forma ascendente/descendente, de acuerdo al contenido.
+La tabla se creó con el paquete <code>[{reactable}](https://glin.github.io/reactable/)</code>, que permite agregar un buscador y acomodar las columnas de forma ascendente/descendente, de acuerdo al contenido.
 
 ## Sitio web
 
-El sitio web está creado con <code>[Quarto](https://quarto.org/)</code>, generando un archivo .html, que es usado para su publicación mediante [GitHub Pages](https://pages.github.com/).
+El sitio web está creado con [Quarto](https://quarto.org/), generando un archivo .html, que es usado para su publicación mediante [GitHub Pages](https://pages.github.com/).
 
-## Ejecución automática
+## Ejecución
 
 La ejecución es parcialmente automática. La descarga de los datos de Spotify y la generación y publicación del sitio web está a cargo de [GitHub Actions](https://docs.github.com/es/actions).
 
-Los datos de las películas comentadas en cada episodio hay que hacerlo de forma manual. Cada vez que se publique un nuevo episodio, agregar la película y su información al repositorio para luego ejecutar el código entero.
+El agregado de los datos de las películas comentadas en cada episodio se hace de forma manual. Cada vez que se publique un nuevo episodio, se añade la película y su información al repositorio para luego ejecutar el código entero.
 
 ## Entorno de ejecución
 
-Para asegurar la reproducibilidad se utilizó <code>[Conda](https://docs.conda.io/en/latest/)</code> indicando versiones de los paquetes y de <code>R</code>. Así las funciones mantienen siempre la misma ejecución.
+Para asegurar la reproducibilidad se utilizó [Conda](https://docs.conda.io/en/latest/) indicando versiones de los paquetes y de <code>R</code>. Así las funciones mantienen siempre la misma ejecución.
 
 # Contacto
 
 Autor y responsable del repositorio: Mgtr. Víctor Gauto
+
 Redes sociales: [Twitter](https://twitter.com/vhgauto), [Instagram](https://www.instagram.com/vhgauto/), [GitHub](https://github.com/vhgauto) y [Mastodon](https://mastodon.social/@vhgauto).
