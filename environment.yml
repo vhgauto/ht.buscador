@@ -1,7 +1,7 @@
 name: ht.buscador
 channels:
   - conda-forge
-  - bioconda
+  # - bioconda
 dependencies:
   # R
   - r-base=4.3.3
@@ -12,6 +12,6 @@ dependencies:
   # python
   - pandas=2.2.2
   - spotipy=2.23.0
-  - snakemake=8.11.3
+  # - snakemake=8.11.3
   # quarto
   - quarto=1.4.550
