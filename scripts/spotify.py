@@ -16,7 +16,6 @@ import os
 import pandas as pd
 
 # función que genera un token a partir de las credenciales de Spotify
-
 def refresh_access_token(refresh_token):
     client_id = os.environ['SPOTIPY_CLIENT_ID']
     client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
@@ -28,8 +27,7 @@ def refresh_access_token(refresh_token):
     response = requests.post('https://accounts.spotify.com/api/token', data=payload, headers=auth_header)
     return response.json().get('access_token')
 
-# client_id = os.environ['SPOTIPY_CLIENT_ID']
-# client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
+# genero nuevo token a partir del refresh token
 refresh_token = os.environ['SPOTIPY_REFRESH_TOKEN']
 new_access_token = refresh_access_token(refresh_token)
 
@@ -42,7 +40,7 @@ ht_id = "6C4MdNWQSPhmzBlIVau30e"
 # resultados
 ht = sp.show_episodes(ht_id, limit = 50, offset = 0, market = None)
 
-# el acceso a los datos se puede hacer de a 50 episodios por ve z
+# el acceso a los datos se puede hacer de a 50 episodios por vez,
 # loop para descargar todos los episodios disponibles
 d = []
 
@@ -66,13 +64,16 @@ while offset < total:
     
     d.append((episodio, desc, duracion_ms, id, imagen_url, fecha, episodio_url))
 
+# tabla con los datos de HT
 df = pd.DataFrame(
   d, 
   columns=('episodio', 'desc', 'duracion_ms', 'id', 'imagen_url', 'fecha', 'episodio_url'))
 
+# mensaje en consola
 print("\n\n--- Se encontraron", len(df), "episodios ---\n\n")
 
 # guardo los datos en un .csv
 df.to_csv("datos/spotify.csv", index=False)
 
+# mensaje en consola
 print("\n\n--- Datos guardados ---\n\n")

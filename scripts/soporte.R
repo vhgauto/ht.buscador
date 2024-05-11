@@ -145,7 +145,7 @@ ahora_label <- glue(
 )
 
 # link al repositorio
-link_repositorio <- "https://github.com/vhgauto/sameep"
+link_repositorio <- "https://github.com/vhgauto/ht.buscador"
 
 link_github <- glue(
   "<a target='_blank' href={link_repositorio}>{icono_github}</a>"

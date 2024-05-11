@@ -1,10 +1,8 @@
 name: Proyecto HT.BUSCADOR
-run-name: ${{ github.actor }} está ejecutando Snakemake 🐍
+run-name: ${{ github.actor }} está generando tabla interactiva HT 🎙️🎬
 on: [push]
-  #schedule:
-  #- cron: '0 10 * * *'
 jobs:
-  Ejecuto-Proyecto-HT-BUSCADOR:
+  HT-BUSCADOR:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -24,9 +22,7 @@ jobs:
           activate-environment: ht.buscador
           environment-file: environment.yml
           auto-activate-base: false
-      #- name: Set up Quarto
-      #  uses: quarto-dev/quarto-actions/setup@v2
-      - name: Render Quarto
+      - name: Creo sitio web
         run: scripts/principal.bash
       - name: Configuro git en el runner
         run: |
@@ -37,4 +33,4 @@ jobs:
           git add .
           git commit -m "sitio web generado con último valor estimado de turbidez"
           git push origin main
-      - run: echo "🍏 El estado final es = ${{ job.status }}."
+      - run: echo "✅ El estado final es = ${{ job.status }}."
