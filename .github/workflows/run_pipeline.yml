@@ -14,7 +14,7 @@ jobs:
     steps:
       - run: echo "🎉 Tareas activadas automáticamente debido a un evento ${{ github.event_name }}"
       - run: echo "🐧 Las tareas están corriendo en un servidor ${{ runner.os }} alojado en GitHub"
-      - run: echo "🔎 El nombre del branch es ${{ github.ref }} y su repositorio es ${{ github.repository }}"
+      - run: echo "🔎 El nombre del branch es ${{ github.ref }} y el repositorio es ${{ github.repository }}"
       - name: Verificar el código del repositorio
         uses: actions/checkout@v4
       - uses: conda-incubator/setup-miniconda@v3
@@ -31,6 +31,6 @@ jobs:
       - name: Commit de los cambios en el repositorio
         run: |
           git add .
-          git commit -m "sitio web generado con último valor estimado de turbidez"
+          git commit -m "sitio web actualizado"
           git push origin main
       - run: echo "✅ El estado final es = ${{ job.status }}."
