@@ -26,7 +26,7 @@ jobs:
       #- name: Set up Quarto
       #  uses: quarto-dev/quarto-actions/setup@v2
       - name: Render Quarto
-        run: python scripts/spotify.py
+        run: scripts/principal.bash
       - name: Configuro git en el runner
         run: |
           git config --local user.email "noreply@github.com"
