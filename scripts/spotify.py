@@ -15,10 +15,13 @@ import os
 
 # credenciales
 
+s_client_id = os.environ['CLIENT_ID']
+s_client_secret = os.environ['CLIENT_SECRET']
+
 sp = spotipy.Spotify(
   auth_manager = SpotifyOAuth(
-    client_id = os.environ['CLIENT_ID'],
-    client_secret = os.environ['CLIENT_SECRET'],
+    client_id = s_client_id,
+    client_secret = s_client_secret,
     redirect_uri = "http://localhost:1410/",
     scope = "user-read-playback-position"))
 
