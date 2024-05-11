@@ -13,3 +13,5 @@ dependencies:
   - pandas=2.2.2
   - spotipy=2.23.0
   - snakemake=8.11.3
+  # quarto
+  - quarto=1.4.550
