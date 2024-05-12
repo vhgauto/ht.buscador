@@ -77,7 +77,7 @@ r <- reactable(
   ),
 
   language = reactableLang(
-    searchPlaceholder = "Buscar episodio y/o película",
+    searchPlaceholder = "Buscar por episodio o película",
     noData = "Nada de nada"
   ),
 
@@ -87,7 +87,7 @@ r <- reactable(
   showSortIcon = TRUE,
 
   defaultColDef = colDef(
-    headerClass = "header", 
+    headerClass = "header",
     align = "center",
     vAlign = "center"
   ),

@@ -43,7 +43,7 @@ source("scripts/datos.R")
 
 Desde 2017 han generado un total de `r ht_dias_label` días y `r ht_horas_label` horas de contenido.
 
-La presente tabla contiene únicamente episodios en los que se comentó una película(s).
+La presente tabla interactiva contiene los episodios en los que se habló de una o varias películas.
 </div>
 :::
 
@@ -51,9 +51,9 @@ La presente tabla contiene únicamente episodios en los que se comentó una pel�
 :::
 
 ::: {.column width="20%"}
-<p style='text-align:right;'>Autor: <b>Víctor Gauto</b>, `r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`
-<br>
-Ver en `r link_github`</p>
+<p style='text-align:right;'>Autor: <b>Víctor Gauto</b><br>
+`r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`<br><br>
+`r link_github`</p>
 :::
 
 ::::
