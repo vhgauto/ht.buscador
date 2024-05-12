@@ -162,7 +162,7 @@ d <- read_csv("datos/datos.csv") |>
   select(-desc, -id) |> 
   mutate(episodio = glue(
     "<a target='_blank' href={episodio_url}>{icono_play} {episodio}</a>")) |>
-  mutate(pelicula = glue("{pelicula} {pelicula_año}")) |>
+  mutate(pelicula = glue("{pelicula} ({pelicula_año})")) |>
   select(-pelicula_año) |>
   mutate(pelicula = glue(
     "<a target='_blank' href={link_letterboxd}>{icono_movie} {pelicula}</a>")) |>
