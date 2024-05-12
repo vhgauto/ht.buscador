@@ -5,7 +5,6 @@ library(tidyverse)
 
 # spotify -----------------------------------------------------------------
 
-# system(command = "python scripts/spotify.py")
 spotify <- read_csv("datos/spotify.csv")
 
 # letterboxd --------------------------------------------------------------

@@ -52,6 +52,9 @@ cg4 <- "#7F7F7F" # grey50
 
 # todos de la fuente JetBrainsMonoNL Nerd Font Mono
 
+# tamaño de íconos
+tamaño_icono <- 2
+
 icono_movie <- glue(
   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
   "&#xf0fce;</span>")
@@ -81,7 +84,7 @@ icono_numeral <- glue(
   "#</span>")
 
 icono_github <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;font-size:1em;'>",
+  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;font-size:{tamaño_icono}em;'>",
   "&#xf09b;</span>"
 )
 
@@ -118,7 +121,7 @@ redes <- tibble(
   mutate(
     icono_label = glue(
       "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;",
-      "color:{ca}; font-size:1.0em;'>",
+      "color:{ca}; font-size:{tamaño_icono}em;'>",
       "&#x{icono};",
       "</span>"
     )
@@ -155,31 +158,31 @@ link_github <- glue(
 
 # lectura de datos
 
-d <- read_csv("datos/datos.csv") |> 
+d <- read_csv("datos/datos.csv") |>
   select(-desc, -id) |> 
   mutate(episodio = glue(
-    "<a target='_blank' href={episodio_url}>{icono_play} {episodio}</a>")) |> 
-  mutate(pelicula = glue("{pelicula} {pelicula_año}")) |> 
-  select(-pelicula_año) |> 
+    "<a target='_blank' href={episodio_url}>{icono_play} {episodio}</a>")) |>
+  mutate(pelicula = glue("{pelicula} {pelicula_año}")) |>
+  select(-pelicula_año) |>
   mutate(pelicula = glue(
-    "<a target='_blank' href={link_letterboxd}>{icono_movie} {pelicula}</a>")) |> 
-  select(-link_letterboxd, -episodio_url) |> 
-  arrange(fecha) |> 
-  group_by(fecha, episodio) |> 
-  mutate(nro = cur_group_id(), .before = 1) |> 
-  ungroup() |> 
+    "<a target='_blank' href={link_letterboxd}>{icono_movie} {pelicula}</a>")) |>
+  select(-link_letterboxd, -episodio_url) |>
+  arrange(fecha) |>
+  group_by(fecha, episodio) |>
+  mutate(nro = cur_group_id(), .before = 1) |>
+  ungroup() |>
   mutate(
     pelicula = str_flatten(pelicula, collapse = "<br>"),
     .by = c(nro, episodio)
-  ) |> 
-  distinct() |> 
+  ) |>
+  distinct() |>
   mutate(nro = case_when(
     nchar(nro) == 1 ~ glue("00{nro}"),
     nchar(nro) == 2 ~ glue("0{nro}"),
     .default = glue("{nro}")
   )
-  ) |> 
-  mutate(nro = glue("{icono_numeral}{nro}")) |> 
+  ) |>
+  mutate(nro = glue("{icono_numeral}{nro}")) |>
   select(
     nro,
     episodio,
@@ -188,6 +191,14 @@ d <- read_csv("datos/datos.csv") |>
     fecha,
     pelicula
   )
+
+ht_contenido <- sum(d$duracion_ms)/1000/3600/24
+
+ht_dias <- floor(ht_contenido)
+ht_horas <- round((ht_contenido - ht_dias)*24)
+
+ht_dias_label <- glue("<b style='color:{cr}'>{ht_dias}</b>")
+ht_horas_label <- glue("<b style='color:{cr}'>{ht_horas}</b>")
 
 # funciones ---------------------------------------------------------------
 

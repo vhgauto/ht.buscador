@@ -3,7 +3,7 @@
 
 r <- reactable(
   # datos
-  data = d, 
+  data = d,
   # orden predeterminado por columna número de episodio
   defaultSorted = "nro",
   defaultSortOrder = "desc",
@@ -36,7 +36,7 @@ r <- reactable(
       name = "",
       sortable = FALSE,
       searchable = FALSE,
-      align = "center", 
+      align = "center",
       width = 250,
       cell = function(value) {
         image <- img(src = value, style = "height: 200px;", alt = value)
