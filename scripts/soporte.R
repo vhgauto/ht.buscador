@@ -202,8 +202,7 @@ f_fecha <- function(value) {
   return(fecha_label_icono)
 }
 
-# función para dar formato al texto que aparece al pasar el mouse sobre los
-# encabezados de las columnas
+# función para dar formato al texto del encabezado de las columnas
 with_tooltip <- function(value, tooltip, ...) {
   div(
     style = glue(
