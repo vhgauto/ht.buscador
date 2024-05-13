@@ -22,6 +22,8 @@ execute:
   warning: false
 ---
 
+I really <span class="nf nf-fa-heart" style='color:red'></span> <span class="nf nf-custom-vim" style='color:red'></span>
+
 ```{r inicio}
 source("scripts/soporte.R")
 

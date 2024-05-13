@@ -83,6 +83,10 @@ icono_numeral <- glue(
   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
   "#</span>")
 
+icono_numeral2 <- glue(
+  '<span class="nf nf-md-pound" style="color:{cr}"></span>'
+)
+
 icono_github <- glue(
   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;font-size:{tamaño_icono}em;'>",
   "&#xf09b;</span>"
@@ -182,7 +186,7 @@ d <- read_csv("datos/datos.csv") |>
     .default = glue("{nro}")
   )
   ) |>
-  mutate(nro = glue("{icono_numeral}{nro}")) |>
+  mutate(nro = glue("{icono_numeral2}{nro}")) |>
   select(
     nro,
     episodio,
