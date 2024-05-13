@@ -161,6 +161,7 @@ d <- read_csv("datos/datos.csv") |>
     pelicula
   )
 
+# cantidad de contenido
 ht_contenido <- sum(d$duracion_ms)/1000/3600/24
 
 ht_dias <- floor(ht_contenido)

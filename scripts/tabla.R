@@ -11,11 +11,11 @@ r <- reactable(
   searchable = TRUE,
   # todas las filas en una única página
   pagination = FALSE,
-  # configuración individual de cada columnas
+  # configuración individual de cada columna
   columns = list(
 
     nro = colDef(
-      width = 100,
+      minWidth = 100,
       searchable = FALSE,
       html = TRUE,
       header = with_tooltip("#", tooltip_nro),
@@ -37,17 +37,18 @@ r <- reactable(
       sortable = FALSE,
       searchable = FALSE,
       align = "center",
-      width = 250,
+      minWidth = 250,
       cell = function(value) {
         image <- img(src = value, style = "height: 200px;", alt = value)
         tagList(
-          div(style = "display: inline-block; ", image))}
+          div(style = "display: inline-block; ", image))
+      }
     ),
 
     duracion_ms = colDef(
       html = TRUE,
       sortable = TRUE,
-      width = 120,
+      minWidth = 120,
       header = with_tooltip(icono_reloj_header, tooltip_duracion),
       cell = function(value) {
         f_duracion(value)
@@ -60,14 +61,14 @@ r <- reactable(
       searchable = FALSE,
       header = with_tooltip(icono_calendario_header, tooltip_fecha),
       align = "center",
-      width = 170,
+      minWidth = 170,
       cell = function(value) {
         f_fecha(value)
       }
     ),
 
     pelicula = colDef(
-      width = 450,
+      minWidth = 450,
       html = TRUE,
       header = with_tooltip("PELÍCULA", tooltip_pelicula),
       searchable = TRUE,
@@ -76,22 +77,26 @@ r <- reactable(
 
   ),
 
+  # texto en la barra de búsqueda
   language = reactableLang(
     searchPlaceholder = "Buscar por episodio o película",
     noData = "Nada de nada"
   ),
 
+  # apariencia gral
   highlight = TRUE,
   striped = TRUE,
   bordered = FALSE,
   showSortIcon = TRUE,
 
+  # estilo de todos los encabezados de tabla
   defaultColDef = colDef(
     headerClass = "header",
     align = "center",
     vAlign = "center"
   ),
 
+  # tema
   theme = reactableTheme(
     backgroundColor = cn,
     borderColor = cg3,
@@ -103,6 +108,7 @@ r <- reactable(
       fontWeight = "bold"),
     highlightColor = cg2,
     stripedColor = cg1,
+    # estilo de la barra de búsqueda
     searchInputStyle = list(
       marginTop = ".1rem",
       marginBottom = "3rem",
