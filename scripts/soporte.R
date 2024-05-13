@@ -210,6 +210,7 @@ with_tooltip <- function(value, tooltip, ...) {
     "text-decoration: underline; 
     text-decoration-color: {cr};
     text-decoration-style: solid;
+    text-underline-offset: 10px;
     cursor: help"),
     tippy(value, tooltip, ...))
 }
