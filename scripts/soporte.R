@@ -14,26 +14,26 @@ library(tidyverse)
 
 # jet
 # JetBrainsMonoNL Nerd Font Mono
-systemfonts::register_font(
-  name = "jet",
-  plain = "fuentes/JetBrainsMonoNLNerdFontMono-Regular.ttf"
-)
+# systemfonts::register_font(
+#   name = "jet",
+#   plain = "fuentes/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+# )
 
 # ubuntu
 # Ubuntu
-systemfonts::register_font(
-  name = "ubuntu",
-  plain = "fuentes/Ubuntu-Regular.ttf",
-  bold = "fuentes/Ubuntu-Bold.ttf",
-  italic = "fuentes/Ubuntu-Italic.ttf"
-)
+# systemfonts::register_font(
+#   name = "ubuntu",
+#   plain = "fuentes/Ubuntu-Regular.ttf",
+#   bold = "fuentes/Ubuntu-Bold.ttf",
+#   italic = "fuentes/Ubuntu-Italic.ttf"
+# )
 
 # friz
 # Friz Quadrata
-systemfonts::register_font(
-  name = "friz",
-  plain = "fuentes/Friz Quadrata Bold.otf"
-)
+# systemfonts::register_font(
+#   name = "friz",
+#   plain = "fuentes/Friz Quadrata Bold.otf"
+# )
 
 # colores -----------------------------------------------------------------
 
@@ -121,8 +121,6 @@ icono_numeral <- glue('<span style="color:{cr}">#</span>')
 icono_github <- glue(
   '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>'
 )
-
-
 
 # tooltip -----------------------------------------------------------------
 
