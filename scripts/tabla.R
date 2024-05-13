@@ -104,7 +104,7 @@ r <- reactable(
     searchInputStyle = list(
       marginTop = ".1rem",
       marginBottom = "3rem",
-      width = "40%",
+      width = "20%",
       border = "none",
       backgroundColor = cg1,
       alignSelf = "left",
