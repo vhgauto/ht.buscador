@@ -13,10 +13,12 @@ letterboxd <- read_csv("datos/letterboxd.csv")
 
 # datos -------------------------------------------------------------------
 
+# combino los datos
 datos <- inner_join(
   letterboxd,
   spotify,
   by = join_by(episodio)
 )
 
+# guardo los datos
 write_csv(datos, "datos/datos.csv")

@@ -11,12 +11,9 @@ $cb: #FFFFFF;
 $cg: #0F0F0F;
 
 // Ubuntu
-// @import url('ubuntu', 'fuentes/Ubuntu-Regular.ttf');
 @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-// Friz Quadrata
-// @import url('friz', 'fuentes/Friz Quadrata Bold.otf');
-@import 'https://fonts.cdnfonts.com/css/friz-quadrata';
+// Friz Quadrata Bold
 @import 'https://db.onlinewebfonts.com/c/9d476c89b917332f9a199fe50bbeb161?family=Friz+Quadrata+Bold';
 
 // Nerd Font
@@ -26,10 +23,6 @@ $cg: #0F0F0F;
 @import url('https://fonts.googleapis.com/css2?family=Gloock&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 /*-- scss:rules --*/
-
-// @font-face {
-//   font-family: 'Ubuntu', 'Friz Quadrata Bold', sans-serif;
-// }
 
 // links de color blanco ($cb)
 a {

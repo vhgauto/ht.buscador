@@ -8,33 +8,6 @@ library(glue)
 library(tippy)
 library(tidyverse)
 
-# fuentes -----------------------------------------------------------------
-
-# registro las fuentes a usar en el documento
-
-# jet
-# JetBrainsMonoNL Nerd Font Mono
-# systemfonts::register_font(
-#   name = "jet",
-#   plain = "fuentes/JetBrainsMonoNLNerdFontMono-Regular.ttf"
-# )
-
-# ubuntu
-# Ubuntu
-# systemfonts::register_font(
-#   name = "ubuntu",
-#   plain = "fuentes/Ubuntu-Regular.ttf",
-#   bold = "fuentes/Ubuntu-Bold.ttf",
-#   italic = "fuentes/Ubuntu-Italic.ttf"
-# )
-
-# friz
-# Friz Quadrata
-# systemfonts::register_font(
-#   name = "friz",
-#   plain = "fuentes/Friz Quadrata Bold.otf"
-# )
-
 # colores -----------------------------------------------------------------
 
 cr <- "#EE4121"
@@ -50,44 +23,10 @@ cg4 <- "#7F7F7F" # grey50
 
 # íconos ------------------------------------------------------------------
 
-# todos de la fuente JetBrainsMonoNL Nerd Font Mono
-
 # tamaño de íconos
 tamaño_icono <- 1.3
 
-# icono_movie <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-#   "&#xf0fce;</span>")
-
-# icono_play <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-#   "&#xf040a;</span>")
-
-# icono_reloj <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-#   "&#xf0954;</span>")
-
-# icono_reloj_header <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>",
-#   "&#xf0954;</span>")
-
-# icono_calendario <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-#   "&#xf073;</span>")
-
-# icono_calendario_header <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>",
-#   "&#xf073;</span>")
-
-# icono_numeral <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-#   "#</span>")
-
-# icono_github <- glue(
-#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;font-size:{tamaño_icono}em;'>",
-#   "&#xf09b;</span>"
-# )
-
+# todos de la fuente Nerd Font
 icono_movie <- glue(
   '<span class="nf nf-md-movie_open" style="color:{cr}"></span>'
 )
@@ -113,10 +52,6 @@ icono_calendario_header <- glue(
 )
 
 icono_numeral <- glue('<span style="color:{cr}">#</span>')
-
-# icono_numeral_header <- glue(
-#   '<span style="font-family:JetBrains Mono">#</span>'
-# )
 
 icono_github <- glue(
   '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>'
@@ -145,26 +80,6 @@ tooltip_pelicula <- glue(
 # redes sociales ----------------------------------------------------------
 
 # tibble con íconos, links y formato
-
-# redes <- tibble(
-#   red = c("twitter", "instagram", "github", "mastodon"),
-#   link = c("https://twitter.com/vhgauto", "https://www.instagram.com/vhgauto",
-#            "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"),
-#   icono = c("eb72", "f02fe", "f09b", "f0ad1")
-# ) |>
-#   mutate(
-#     icono_label = glue(
-#       "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;",
-#       "color:{ca}; font-size:{tamaño_icono}em;'>",
-#       "&#x{icono};",
-#       "</span>"
-#     )
-#   ) |>
-#   mutate(
-#     label = glue(
-#       "<a target='_blank' href={link}>{icono_label}</a>"
-#     )
-#   )
 
 redes <- tibble(
   red = c("twitter", "instagram", "github", "mastodon"),
