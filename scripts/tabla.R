@@ -19,7 +19,7 @@ r <- reactable(
       searchable = FALSE,
       html = TRUE,
       header = with_tooltip("#", tooltip_nro),
-      style = list(color = ca, fontFamily = "JetBrainsMonoNL Nerd Font Mono")
+      style = list(color = ca, fontFamily = "JetBrains Mono")
     ),
 
     episodio = colDef(
@@ -98,7 +98,9 @@ r <- reactable(
     color = cb,
     cellPadding = "20px 20px 20px 20px",
     cellStyle = list(fontFamily = "Ubuntu"),
-    headerStyle = list(color = ca, fontFamily = "Friz Quadrata", fontSize = 30),
+    headerStyle = list(
+      color = ca, fontFamily = "Friz Quadrata", fontSize = 30,
+      fontWeight = "bold"),
     highlightColor = cg2,
     stripedColor = cg1,
     searchInputStyle = list(

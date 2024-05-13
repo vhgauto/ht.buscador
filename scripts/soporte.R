@@ -53,44 +53,76 @@ cg4 <- "#7F7F7F" # grey50
 # todos de la fuente JetBrainsMonoNL Nerd Font Mono
 
 # tamaño de íconos
-tamaño_icono <- 2
+tamaño_icono <- 1.3
+
+# icono_movie <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
+#   "&#xf0fce;</span>")
+
+# icono_play <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
+#   "&#xf040a;</span>")
+
+# icono_reloj <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
+#   "&#xf0954;</span>")
+
+# icono_reloj_header <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>",
+#   "&#xf0954;</span>")
+
+# icono_calendario <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
+#   "&#xf073;</span>")
+
+# icono_calendario_header <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>",
+#   "&#xf073;</span>")
+
+# icono_numeral <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
+#   "#</span>")
+
+# icono_github <- glue(
+#   "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;font-size:{tamaño_icono}em;'>",
+#   "&#xf09b;</span>"
+# )
 
 icono_movie <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-  "&#xf0fce;</span>")
+  '<span class="nf nf-md-movie_open" style="color:{cr}"></span>'
+)
 
 icono_play <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-  "&#xf040a;</span>")
+  '<span class="nf nf-md-play" style="color:{cr}"></span>'
+)
 
 icono_reloj <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-  "&#xf0954;</span>")
+  '<span class="nf nf-md-clock" style="color:{cr}"></span>'
+)
 
 icono_reloj_header <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>",
-  "&#xf0954;</span>")
+  '<span class="nf nf-md-clock""></span>'
+)
 
 icono_calendario <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-  "&#xf073;</span>")
+  '<span class="nf nf-fa-calendar" style="color:{cr}"></span>'
+)
 
 icono_calendario_header <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>",
-  "&#xf073;</span>")
-
-icono_numeral <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono; color:{cr}'>",
-  "#</span>")
-
-icono_numeral2 <- glue(
-  '<span class="nf nf-md-pound" style="color:{cr}"></span>'
+  '<span class="nf nf-fa-calendar""></span>'
 )
+
+icono_numeral <- glue('<span style="color:{cr}">#</span>')
+
+# icono_numeral_header <- glue(
+#   '<span style="font-family:JetBrains Mono">#</span>'
+# )
 
 icono_github <- glue(
-  "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;font-size:{tamaño_icono}em;'>",
-  "&#xf09b;</span>"
+  '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>'
 )
+
+
 
 # tooltip -----------------------------------------------------------------
 
@@ -116,18 +148,38 @@ tooltip_pelicula <- glue(
 
 # tibble con íconos, links y formato
 
+# redes <- tibble(
+#   red = c("twitter", "instagram", "github", "mastodon"),
+#   link = c("https://twitter.com/vhgauto", "https://www.instagram.com/vhgauto",
+#            "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"),
+#   icono = c("eb72", "f02fe", "f09b", "f0ad1")
+# ) |>
+#   mutate(
+#     icono_label = glue(
+#       "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;",
+#       "color:{ca}; font-size:{tamaño_icono}em;'>",
+#       "&#x{icono};",
+#       "</span>"
+#     )
+#   ) |>
+#   mutate(
+#     label = glue(
+#       "<a target='_blank' href={link}>{icono_label}</a>"
+#     )
+#   )
+
 redes <- tibble(
   red = c("twitter", "instagram", "github", "mastodon"),
-  link = c("https://twitter.com/vhgauto", "https://www.instagram.com/vhgauto",
-           "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"),
-  icono = c("eb72", "f02fe", "f09b", "f0ad1")
+  link = c(
+    "https://twitter.com/vhgauto", "https://www.instagram.com/vhgauto",
+    "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"),
+  class = c(
+    "nf-md-twitter", "nf-md-instagram", "nf-md-github", "nf-md-mastodon")
 ) |>
   mutate(
     icono_label = glue(
-      "<span style='font-family:JetBrainsMonoNL Nerd Font Mono;",
-      "color:{ca}; font-size:{tamaño_icono}em;'>",
-      "&#x{icono};",
-      "</span>"
+      '<span class="nf {class}" style="color:{ca};',
+      'font-size:{tamaño_icono}em;"></span>'
     )
   ) |>
   mutate(
@@ -142,7 +194,7 @@ redes <- tibble(
 
 # HOY TRASNOCHE
 ht <- glue(
-  "<b style='font-family: Friz Quadrata; color: {ca}'>HOY TRASNOCHE</b>"
+  "<b style='font-family: Friz Quadrata Bold; color: {ca}'>HOY TRASNOCHE</b>"
 )
 
 # fecha y hora de última actualización
@@ -186,7 +238,7 @@ d <- read_csv("datos/datos.csv") |>
     .default = glue("{nro}")
   )
   ) |>
-  mutate(nro = glue("{icono_numeral2}{nro}")) |>
+  mutate(nro = glue("{icono_numeral}{nro}")) |>
   select(
     nro,
     episodio,

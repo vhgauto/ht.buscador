@@ -22,8 +22,6 @@ execute:
   warning: false
 ---
 
-I really <span class="nf nf-fa-heart" style='color:red'></span> <span class="nf nf-custom-vim" style='color:red'></span>
-
 ```{r inicio}
 source("scripts/soporte.R")
 
@@ -55,7 +53,7 @@ La presente tabla está compuesta de los episodios <i>tradicionales</i>, en los 
 ::: {.column width="20%"}
 <p style='text-align:right;'>Autor: <b>Víctor Gauto</b><br>
 `r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`<br><br>
-Detalles: `r link_github`</p>
+Ver en `r link_github`</p>
 :::
 
 ::::
@@ -82,11 +80,11 @@ r
 ::: {.column width="60%"}
 <p style='text-align:right;'>Autor: <b>Víctor Gauto</b><br>
 `r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`<br><br>
-Detalles: `r link_github`</p>
+Ver en `r link_github`</p>
 :::
 :::
 :::
 
 ::: {.column-screen}
-<span style='font-family:JetBrainsMonoNL Nerd Font Mono;'>`r ahora_label`</span>
+<span style='font-family:JetBrains Mono;'>`r ahora_label`</span>
 :::
