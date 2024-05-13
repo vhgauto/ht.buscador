@@ -14,13 +14,17 @@ La tabla es interactiva, por lo que se puede ordenar por número de episodio, du
 
 # Descripción
 
-Se combinan lenguajes de programación en R (principalmente) y Python. El sitio web combina datos de Spotify y Letterboxd, con ejecución automática via GitHub Actions y creación del sitio web mediante Quarto.
+Se combinan códigos de programación en R (principalmente) y Python. El sitio web utiliza datos de Spotify y Letterboxd, con ejecución automática via GitHub Actions y creación del sitio web mediante Quarto.
 
 ## Datos
 
 Los datos de Spotify de <b>HOY TRASNOCHE</b> se acceden mediante la librería de Python <code>{[spotipy](https://spotipy.readthedocs.io/)}</code>, para lo cual es necesario tener credenciales de la [API de Spotify](https://developer.spotify.com/documentation/web-api).
 
-Los datos de las películas provienen de esta [lista de Letterboxd](https://letterboxd.com/matiasec/list/hoy-trasnoche-con-capitulo/) que incluye el nombre del episodio. Se utilizó el paquete a <code>[{rvest}](https://rvest.tidyverse.org/)</code> para el <i>web scrapping</i>.
+Los datos de las películas provienen de [esta lista de Letterboxd](https://letterboxd.com/matiasec/list/hoy-trasnoche-con-capitulo/) que incluye el nombre del episodio. No he revisado exhaustivamente la lista. Se utilizó el paquete <code>[{rvest}](https://rvest.tidyverse.org/)</code> para el <i>web scrapping</i>.
+
+Los episodios que componen la tabla corresponden son los <i>tradicionales</i>, es decir, en los que se discute una (o múltiples) película(s). No se consideraron los episodios de los ranking de fin de año, los Hoy Trasnoche Diario o en los que se promocionaron otros productos (Mató Mil, Dr. Muerte).
+
+La columna de películas contiene los links a las mismas en Letterboxd y los nombres están en inglés. Los episodios en los que se comentó más de una película se agrupan dentro del mismo episodio.
 
 La transformación de datos se llevó a cabo con los paquetes de <code>[{tidyverse}](https://www.tidyverse.org/)</code>.
 
@@ -41,6 +45,14 @@ El agregado de los datos de las películas comentadas en cada episodio se hace d
 ## Entorno de ejecución
 
 Para asegurar la reproducibilidad se utilizó [Conda](https://docs.conda.io/en/latest/) indicando versiones de los paquetes y de <code>R</code>. Así las funciones mantienen siempre la misma ejecución.
+
+# Motivación
+
+Soy entusiasta en el manejo de datos, programación y visualización, siempre en búsqueda de aprender nuevas herramientas informáticas. Pueden ver el resto de mis [repositorios](https://github.com/vhgauto?tab=repositories) para que se hagan una idea.
+
+Escucho <b>HOY TRASNOCHE</b> desde el primer momento, y en este repositorio combino ambas cosas.
+
+Pienso en este sitio web como un recurso de consulta. Para verificar si alguna película fue comentada, o si se desea volver a escuchar un episodio en particular.
 
 # Contacto
 
