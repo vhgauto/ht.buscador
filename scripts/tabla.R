@@ -15,29 +15,29 @@ r <- reactable(
   columns = list(
 
     nro = colDef(
-      minWidth = 100,
-      searchable = FALSE,
+      minWidth = 6,
       html = TRUE,
+      searchable = FALSE,
       header = with_tooltip("#", tooltip_nro),
       style = list(color = ca, fontFamily = "JetBrains Mono")
     ),
 
     episodio = colDef(
+      minWidth = 39,
+      html = TRUE,
       sortable = FALSE,
       align = "left",
-      width = 700,
-      html = TRUE,
       header = with_tooltip("EPISODIO", tooltip_episodio),
       style = list(fontFamily = "Ubuntu"),
       headerStyle = list(textAlign = "center")
     ),
 
     imagen_url = colDef(
+      minWidth = 14,
       name = "",
       sortable = FALSE,
       searchable = FALSE,
       align = "center",
-      minWidth = 250,
       cell = function(value) {
         image <- img(src = value, style = "height: 200px;", alt = value)
         tagList(
@@ -46,9 +46,9 @@ r <- reactable(
     ),
 
     duracion_ms = colDef(
+      minWidth = 8,
       html = TRUE,
       sortable = TRUE,
-      minWidth = 120,
       header = with_tooltip(icono_reloj_header, tooltip_duracion),
       cell = function(value) {
         f_duracion(value)
@@ -56,23 +56,24 @@ r <- reactable(
     ),
 
     fecha = colDef(
+      minWidth = 10,
       html = TRUE,
       sortable = TRUE,
       searchable = FALSE,
       header = with_tooltip(icono_calendario_header, tooltip_fecha),
       align = "center",
-      minWidth = 170,
       cell = function(value) {
         f_fecha(value)
       }
     ),
 
     pelicula = colDef(
-      minWidth = 450,
+      minWidth = 27,
       html = TRUE,
       header = with_tooltip("PELÍCULA", tooltip_pelicula),
+      headerStyle = list(paddingLeft = "50px"),
       searchable = TRUE,
-      style = list(textAlign = "left", padding = "50px")
+      style = list(textAlign = "left", paddingLeft = "50px")
     )
 
   ),
@@ -86,7 +87,7 @@ r <- reactable(
   # apariencia gral
   highlight = TRUE,
   striped = TRUE,
-  bordered = FALSE,
+  bordered = TRUE,
   showSortIcon = TRUE,
 
   # estilo de todos los encabezados de tabla
