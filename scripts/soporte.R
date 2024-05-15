@@ -133,7 +133,7 @@ link_github <- glue(
 # lectura de datos
 
 d <- read_csv("datos/datos.csv") |>
-  select(-desc, -id) |> 
+  select(-desc, -id) |>
   mutate(episodio = glue(
     "<a target='_blank' href={episodio_url}>{icono_play} {episodio}</a>")) |>
   mutate(pelicula = glue("{pelicula} ({pelicula_año})")) |>
@@ -166,8 +166,8 @@ d <- read_csv("datos/datos.csv") |>
     pelicula
   )
 
-# cantidad de contenido
-ht_contenido <- sum(d$duracion_ms)/1000/3600/24
+# cantidad de contenido total, en días
+ht_contenido <- sum(spotify$duracion_ms)/1000/3600/24
 
 ht_dias <- floor(ht_contenido)
 ht_horas <- round((ht_contenido - ht_dias)*24)
