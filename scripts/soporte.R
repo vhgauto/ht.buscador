@@ -57,6 +57,11 @@ icono_github <- glue(
   '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>'
 )
 
+icono_flecha <- glue(
+  '<span class="nf nf-fa-circle_arrow_up" ',
+  'style="font-size:{tamaño_icono}em;"></span>'
+)
+
 # tooltip -----------------------------------------------------------------
 
 # texto a mostrar al pasar el mouse sobre los encabezados de las columnas
