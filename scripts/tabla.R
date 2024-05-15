@@ -85,7 +85,7 @@ r <- reactable(
   # apariencia gral
   highlight = TRUE,
   striped = FALSE,
-  bordered = TRUE,
+  bordered = FALSE,
   showSortIcon = TRUE,
 
   # estilo de todos los encabezados de tabla
