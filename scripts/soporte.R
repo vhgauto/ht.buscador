@@ -58,7 +58,7 @@ icono_github <- glue(
 )
 
 icono_flecha <- glue(
-  '<span class="nf nf-fa-circle_arrow_up" ',
+  '<span class="nf nf-fa-poop" ',
   'style="font-size:{tamaño_icono}em;"></span>'
 )
 
