@@ -4,14 +4,14 @@
 r <- reactable(
   # datos
   data = d,
-  # orden predeterminado por columna número de episodio
+  # orden predeterminado por número de episodio, descendente
   defaultSorted = "nro",
   defaultSortOrder = "desc",
-  # buscado en toda la tabla
+  # búsqueda en toda la tabla
   searchable = TRUE,
   # todas las filas en una única página
   pagination = FALSE,
-  # configuración individual de cada columna
+  # configuración individual por columna
   columns = list(
 
     nro = colDef(
@@ -23,17 +23,15 @@ r <- reactable(
     ),
 
     episodio = colDef(
-      minWidth = 39,
+      minWidth = 36,
       html = TRUE,
       sortable = FALSE,
       align = "left",
-      header = with_tooltip("EPISODIO", tooltip_episodio),
-      style = list(fontFamily = "Ubuntu"),
-      headerStyle = list(textAlign = "center")
+      header = with_tooltip("EPISODIO", tooltip_episodio)
     ),
 
     imagen_url = colDef(
-      minWidth = 14,
+      minWidth = 15,
       name = "",
       sortable = FALSE,
       searchable = FALSE,
@@ -56,7 +54,7 @@ r <- reactable(
     ),
 
     fecha = colDef(
-      minWidth = 10,
+      minWidth = 11,
       html = TRUE,
       sortable = TRUE,
       searchable = FALSE,
@@ -68,11 +66,11 @@ r <- reactable(
     ),
 
     pelicula = colDef(
-      minWidth = 27,
+      minWidth = 24,
       html = TRUE,
+      searchable = TRUE,
       header = with_tooltip("PELÍCULA", tooltip_pelicula),
       headerStyle = list(paddingLeft = "50px"),
-      searchable = TRUE,
       style = list(textAlign = "left", paddingLeft = "50px")
     )
 
@@ -87,7 +85,7 @@ r <- reactable(
   # apariencia gral
   highlight = TRUE,
   striped = TRUE,
-  bordered = FALSE,
+  bordered = TRUE,
   showSortIcon = TRUE,
 
   # estilo de todos los encabezados de tabla
@@ -106,7 +104,7 @@ r <- reactable(
     cellStyle = list(fontFamily = "Ubuntu"),
     headerStyle = list(
       color = ca, fontFamily = "Friz Quadrata", fontSize = 30,
-      fontWeight = "bold"),
+      fontWeight = "bold", textAlign = "center"),
     highlightColor = cg2,
     stripedColor = cg1,
     # estilo de la barra de búsqueda
