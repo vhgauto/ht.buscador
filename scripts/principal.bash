@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# extraigo datos de Spotofy
+# extraigo datos de Spotify
 python scripts/spotify.py
 
 # genero .html
