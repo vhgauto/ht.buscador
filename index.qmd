@@ -23,9 +23,9 @@ execute:
 ---
 
 ```{r inicio}
-source("scripts/soporte.R")
-
 source("scripts/datos.R")
+
+source("scripts/soporte.R")
 ```
 
 ::::: column-screen

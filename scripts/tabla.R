@@ -84,7 +84,7 @@ r <- reactable(
 
   # apariencia gral
   highlight = TRUE,
-  striped = TRUE,
+  striped = FALSE,
   bordered = TRUE,
   showSortIcon = TRUE,
 
