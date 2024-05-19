@@ -39,7 +39,7 @@ source("scripts/soporte.R")
 
 ::: {.column width="40%"}
 <div style='font-size:1.25em'>
-[<b>Fiorella Sargenti</b>](https://www.instagram.com/fiosargenti) y [<b>Santigo Calori</b>](https://www.instagram.com/sancalori/) conducen [`r ht`](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e), el único podcast de cine.
+[<b>Fiorella Sargenti</b>](https://www.instagram.com/fiosargenti) y [<b>Santigo Calori</b>](https://www.instagram.com/sancalori/) conducen [`r ht`](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e), el único y mejor podcast <span style='text-decoration: line-through; text-decoration-color:`r cr`;'>de cine</span> del mundo.
 
 Desde 2017 han generado un total de `r ht_dias_label` días y `r ht_horas_label` horas de contenido.
 
@@ -84,6 +84,17 @@ Ver en `r link_github`</p>
 :::
 :::
 :::
+
+<br>
+<br>
+<br>
+<br>
+<p style='color:`r cg4`'>Este sitio web, su desarrollo y mantenimiento son un proyecto personal. No estoy involucrado de ninguna manera con el podcast ni con sus conductores.</p>
+
+<br>
+<br>
+<br>
+<br>
 
 ::: {.column-screen}
 <span style='font-family:JetBrains Mono;'>`r ahora_label`</span>
