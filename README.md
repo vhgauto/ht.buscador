@@ -54,7 +54,13 @@ Escucho <b>HOY TRASNOCHE</b> desde el primer momento, y en este repositorio comb
 
 Pienso en este sitio web como un recurso de consulta. Para verificar si alguna película fue comentada, o si se desea volver a escuchar un episodio en particular.
 
+# Aclaración
+
+Este sitio web, su desarrollo y mantenimiento son un proyecto personal. No estoy involucrado de ninguna manera con el podcast ni con sus conductores.
+
 # Contacto
+
+Estoy abierto a recibir comentarios, correcciones y sugerencias. No dudes en ponerte en contacto.
 
 Autor y responsable del repositorio: Mgtr. Víctor Gauto
 
