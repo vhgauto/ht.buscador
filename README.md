@@ -1,16 +1,20 @@
 # Tabla interactiva HOY TRASNOCHE
 
 <p align="center">
-<img src="img/logo.jpeg" width=30% align="center">
+<img src="img/logo.jpeg" width=40% align="center">
 </p>
 
-[HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único podcast de cine. Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori).
+[HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único y mejor podcast <span style="text-decoration: line-through;">de cine</span> del mundo. Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori).
 
 El sitio web contiene los episodios, fecha de publicación y duración, junto con la película comentada, y los links para escuchar los episodios.
 
 La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración y nombre de película, o realizar una búsqueda por nombre de episodio/película.
 
+<span align="center">
+
 # [LINK](https://vhgauto.github.io/ht.buscador/)
+
+</span>
 
 # Descripción
 
