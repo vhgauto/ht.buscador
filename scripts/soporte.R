@@ -78,7 +78,7 @@ tooltip_duracion <- glue("Duración de los episodios.")
 tooltip_fecha <- glue("Fecha de publicación de los episodios.")
 
 tooltip_pelicula <- glue(
-  "Los nombres de las películas están en inglés. El ",
+  "Los nombres de las películas están (casi todos) en inglés. El ",
   "link redirige al sitio de la película en <b style='color:{ca}'>",
   "Letterboxd</b>.")
 
