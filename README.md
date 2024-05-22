@@ -28,7 +28,7 @@ Los datos de las películas provienen de [esta lista de Letterboxd](https://lett
 
 Los episodios que componen la tabla corresponden son los <i>tradicionales</i>, es decir, en los que se discute una (o múltiples) película(s). No se consideraron los episodios de los ranking de fin de año, los Hoy Trasnoche Diario o en los que se promocionaron otros productos (Mató Mil, Dr. Muerte).
 
-La columna de películas contiene los links a las mismas en Letterboxd y los nombres están en inglés. Los episodios en los que se comentó más de una película se agrupan dentro del mismo episodio.
+La columna de películas contiene los links a las mismas en Letterboxd y los nombres están en su mayoría en inglés. Los episodios en los que se comentó más de una película se agrupan dentro del mismo episodio.
 
 La transformación de datos se llevó a cabo con los paquetes de <code>[{tidyverse}](https://www.tidyverse.org/)</code>.
 
