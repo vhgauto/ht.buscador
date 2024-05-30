@@ -134,10 +134,10 @@ d <- read_csv("datos/datos.csv") |>
     "<a target='_blank' href={episodio_url}>{icono_play} {episodio}</a>")) |>
   mutate(pelicula = glue("{pelicula} ({pelicula_año})")) |>
   select(-pelicula_año) |>
+  arrange(fecha, pelicula) |>
   mutate(pelicula = glue(
     "<a target='_blank' href={link_letterboxd}>{icono_movie} {pelicula}</a>")) |>
   select(-link_letterboxd, -episodio_url) |>
-  arrange(fecha) |>
   group_by(fecha, episodio) |>
   mutate(nro = cur_group_id(), .before = 1) |>
   ungroup() |>
