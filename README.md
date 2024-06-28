@@ -26,7 +26,7 @@ Los datos de Spotify de <b>HOY TRASNOCHE</b> se acceden mediante la librería de
 
 Los datos de las películas provienen de [esta lista de Letterboxd](https://letterboxd.com/matiasec/list/hoy-trasnoche-con-capitulo/) que incluye el nombre del episodio. No he revisado exhaustivamente la lista. Se utilizó el paquete <code>[{rvest}](https://rvest.tidyverse.org/)</code> para el <i>web scrapping</i>.
 
-Los episodios que componen la tabla corresponden son los <i>tradicionales</i>, es decir, en los que se discute una (o múltiples) película(s). No se consideraron los episodios de los ranking de fin de año, los Hoy Trasnoche Diario o en los que se promocionaron otros productos (Mató Mil, Dr. Muerte).
+Los episodios que componen la tabla son los <i>tradicionales</i>, es decir, en los que se discute una (o múltiples) película(s). No se consideraron los episodios de los ranking de fin de año, los Hoy Trasnoche Diario o en los que se promocionaron otros productos (Mató Mil, Dr. Muerte), ni las recomendaciones del Videoclub.
 
 La columna de películas contiene los links a las mismas en Letterboxd y los nombres están en su mayoría en inglés. Los episodios en los que se comentó más de una película se agrupan dentro del mismo episodio.
 
