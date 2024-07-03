@@ -27,7 +27,10 @@ r <- reactable(
       html = TRUE,
       sortable = FALSE,
       align = "left",
-      header = with_tooltip("EPISODIO", tooltip_episodio)
+      header = with_tooltip("EPISODIO", tooltip_episodio),
+      cell = function(value, index) {
+        f_episodio(value, index)
+      }
     ),
 
     imagen_url = colDef(
@@ -71,7 +74,19 @@ r <- reactable(
       searchable = TRUE,
       header = with_tooltip("PELÍCULA", tooltip_pelicula),
       headerStyle = list(paddingLeft = "50px"),
-      style = list(textAlign = "left", paddingLeft = "50px")
+      style = list(textAlign = "left", paddingLeft = "50px"),
+      cell = function(value, index) {
+        f_pelicula(value, index)
+      }
+    ),
+
+    # oculto dos columnas con links
+    link_letterboxd = colDef(
+      show = FALSE
+    ),
+
+    episodio_url = colDef(
+      show = FALSE
     )
 
   ),

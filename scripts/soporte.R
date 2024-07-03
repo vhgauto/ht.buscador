@@ -130,14 +130,9 @@ link_repositorio <- "https://github.com/vhgauto/ht.buscador"
 
 d <- read_csv("datos/datos.csv") |>
   select(-desc, -id) |>
-  mutate(episodio = glue(
-    "<a target='_blank' href={episodio_url}>{icono_play} {episodio}</a>")) |>
   mutate(pelicula = glue("{pelicula} ({pelicula_año})")) |>
   select(-pelicula_año) |>
   arrange(fecha, pelicula) |>
-  mutate(pelicula = glue(
-    "<a target='_blank' href={link_letterboxd}>{icono_movie} {pelicula}</a>")) |>
-  select(-link_letterboxd, -episodio_url) |>
   group_by(fecha, episodio) |>
   mutate(nro = cur_group_id(), .before = 1) |>
   ungroup() |>
@@ -159,7 +154,9 @@ d <- read_csv("datos/datos.csv") |>
     imagen_url,
     duracion_ms,
     fecha,
-    pelicula
+    pelicula,
+    link_letterboxd,
+    episodio_url
   )
 
 # cantidad de contenido total, en días
@@ -176,9 +173,9 @@ ht_horas_label <- glue("<b style='color:{cr}'>{ht_horas}</b>")
 # función para dar formato a la duración de los episodios
 f_duracion <- function(value) {
 
-  minutos <- round(value/1000/60)
-  dur_h <- floor(minutos/60)
-  dur_m <- minutos - dur_h*60
+  minutos <- round(value / 1000 / 60)
+  dur_h <- floor(minutos / 60)
+  dur_m <- minutos - dur_h * 60
   label_h <- glue("{dur_h}h")
   label_m <- glue("{dur_m}m")
   dur_label <- if_else(
@@ -204,14 +201,32 @@ f_fecha <- function(value) {
   return(fecha_label_icono)
 }
 
+# función que agrega el link de la película a Letterboxd
+f_pelicula <- function(value, index) {
+  link <- d$link_letterboxd[index]
+  label <- glue(
+    "<a target='_blank' href={link}>{icono_movie} {value}</a>"
+  )
+  return(label)
+}
+
+# función que agrega el link del episodio a Spotify
+f_episodio <- function(value, index) {
+  link <- d$episodio_url[index]
+  label <- glue(
+    "<a target='_blank' href={link}>{icono_play} {value}</a>"
+  )
+  return(label)
+}
+
 # función para dar formato al texto del encabezado de las columnas
 with_tooltip <- function(value, tooltip, ...) {
   div(
     style = glue(
-    "text-decoration: underline; 
-    text-decoration-color: {cr};
-    text-decoration-style: solid;
-    text-underline-offset: 10px;
-    cursor: help"),
+    "text-decoration: underline;",
+    "text-decoration-color: {cr};",
+    "text-decoration-style: solid;",
+    "text-underline-offset: 10px;",
+    "cursor: help"),
     tippy(value, tooltip, ...))
 }
