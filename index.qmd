@@ -23,6 +23,8 @@ execute:
 ---
 
 ```{r inicio}
+#| output: false
+
 Sys.setlocale(locale="es_ES.UTF-8")
 
 source("scripts/datos.R")
