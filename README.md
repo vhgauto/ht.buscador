@@ -4,11 +4,11 @@
 <img src="img/logo.jpeg" width=40% align="center">
 </p>
 
-[HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único y mejor podcast <span style="text-decoration: line-through;">de cine</span> del mundo. Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori).
+[HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único y mejor podcast ~~de cine~~ del mundo. Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori).
 
 El sitio web contiene los episodios, fecha de publicación y duración, junto con la película comentada, y los links para escuchar los episodios.
 
-La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración y nombre de película, o realizar una búsqueda por nombre de episodio/película.
+La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración, fecha de publicación y nombre de película, o realizar una búsqueda por nombre de episodio/película.
 
 <span align="center">
 
@@ -22,23 +22,25 @@ Se combinan códigos de programación en R (principalmente) y Python. El sitio w
 
 ## Datos
 
-Los datos de Spotify de <b>HOY TRASNOCHE</b> se acceden mediante la librería de Python <code>{[spotipy](https://spotipy.readthedocs.io/)}</code>, para lo cual es necesario tener credenciales de la [API de Spotify](https://developer.spotify.com/documentation/web-api).
+Los datos de Spotify de <b>HOY TRASNOCHE</b> se acceden mediante la librería de Python [`{spotipy}`]((https://spotipy.readthedocs.io/)), para lo cual es necesario tener credenciales de la [API de Spotify](https://developer.spotify.com/documentation/web-api).
 
-Los datos de las películas provienen de [esta lista de Letterboxd](https://letterboxd.com/matiasec/list/hoy-trasnoche-con-capitulo/) que incluye el nombre del episodio. No he revisado exhaustivamente la lista. Se utilizó el paquete <code>[{rvest}](https://rvest.tidyverse.org/)</code> para el <i>web scrapping</i>.
+Los datos de las películas provienen de [esta lista de Letterboxd](https://letterboxd.com/matiasec/list/hoy-trasnoche-con-capitulo/) que incluye el nombre del episodio. No he revisado exhaustivamente la lista. Se utilizó el paquete [`{rvest}`]((https://rvest.tidyverse.org/)) para el <i>web scrapping</i>.
 
 Los episodios que componen la tabla son los <i>tradicionales</i>, es decir, en los que se discute una (o múltiples) película(s). No se consideraron los episodios de los ranking de fin de año, los Hoy Trasnoche Diario o en los que se promocionaron otros productos (Mató Mil, Dr. Muerte), ni las recomendaciones del Videoclub.
 
 La columna de películas contiene los links a las mismas en Letterboxd y los nombres están en su mayoría en inglés. Los episodios en los que se comentó más de una película se agrupan dentro del mismo episodio.
 
-La transformación de datos se llevó a cabo con los paquetes de <code>[{tidyverse}](https://www.tidyverse.org/)</code>.
+La transformación de datos se llevó a cabo con los paquetes de [`{tidyverse}`]((https://www.tidyverse.org/)).
 
 ## Creación de tabla interactiva
 
-La tabla se creó con el paquete <code>[{reactable}](https://glin.github.io/reactable/)</code>, que permite agregar un buscador y acomodar las columnas de forma ascendente/descendente, de acuerdo al contenido.
+La tabla se creó con el paquete [`{reactable}`](https://glin.github.io/reactable/), que permite agregar un buscador y acomodar las columnas de forma ascendente/descendente, de acuerdo al contenido.
+
+
 
 ## Sitio web
 
-El sitio web está creado con [Quarto](https://quarto.org/), generando un archivo .html, que es usado para su publicación mediante [GitHub Pages](https://pages.github.com/).
+El sitio web está creado con [Quarto](https://quarto.org/), generando un archivo `.html`, que es usado para su publicación mediante [GitHub Pages](https://pages.github.com/).
 
 ## Ejecución
 
@@ -48,7 +50,7 @@ El agregado de los datos de las películas comentadas en cada episodio se hace d
 
 ## Entorno de ejecución
 
-Para asegurar la reproducibilidad se utilizó [Conda](https://docs.conda.io/en/latest/) indicando versiones de los paquetes y de <code>R</code>. Así las funciones mantienen siempre la misma ejecución.
+Para asegurar la reproducibilidad se utilizó [Conda](https://docs.conda.io/en/latest/) indicando versiones de los paquetes y de `R`. Así las funciones mantienen siempre la misma ejecución.
 
 # Motivación
 
