@@ -54,7 +54,7 @@ Para asegurar la reproducibilidad se utilizó [Conda](https://docs.conda.io/en/l
 
 Soy entusiasta en el manejo de datos, programación y visualización, siempre en búsqueda de aprender nuevas herramientas informáticas. Pueden ver el resto de mis [repositorios](https://github.com/vhgauto?tab=repositories) para que se hagan una idea.
 
-Escucho <b>HOY TRASNOCHE</b> desde el primer momento, y en este repositorio combino ambas cosas.
+Escucho <b>HOY TRASNOCHE</b> desde el primer momento, y en este repositorio combino todas estas cosas.
 
 Pienso en este sitio web como un recurso de consulta. Para verificar si alguna película fue comentada, o si se desea volver a escuchar un episodio en particular.
 
@@ -64,8 +64,6 @@ Este sitio web, su desarrollo y mantenimiento son un proyecto personal. No estoy
 
 # Contacto
 
-Estoy abierto a recibir comentarios, correcciones y sugerencias. No dudes en ponerte en contacto.
-
 Autor y responsable del repositorio: Mgtr. Víctor Gauto
 
-Redes sociales: [Twitter](https://twitter.com/vhgauto), [Instagram](https://www.instagram.com/vhgauto/), [GitHub](https://github.com/vhgauto) y [Mastodon](https://mastodon.social/@vhgauto).
+Estoy abierto a recibir comentarios, correcciones y sugerencias. No dudes en ponerte en contacto: [Twitter](https://twitter.com/vhgauto), [Instagram](https://www.instagram.com/vhgauto/), [GitHub](https://github.com/vhgauto) y [Mastodon](https://mastodon.social/@vhgauto).
