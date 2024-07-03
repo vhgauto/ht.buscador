@@ -140,5 +140,3 @@ r <- reactable(
     )
   )
 )
-
-r

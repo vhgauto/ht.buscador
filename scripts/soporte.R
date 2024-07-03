@@ -1,7 +1,6 @@
 
 # paquetes ----------------------------------------------------------------
 
-# paquetes
 library(reactable)
 library(htmltools)
 library(glue)
