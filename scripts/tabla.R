@@ -75,6 +75,7 @@ r <- reactable(
       minWidth = 24,
       html = TRUE,
       searchable = TRUE,
+      sortable = FALSE,
       header = with_tooltip("PELÍCULA", tooltip_pelicula),
       headerStyle = list(paddingLeft = "50px"),
       style = list(textAlign = "left", paddingLeft = "50px"),
