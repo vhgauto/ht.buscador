@@ -19,7 +19,10 @@ r <- reactable(
       html = TRUE,
       searchable = FALSE,
       header = with_tooltip("#", tooltip_nro),
-      style = list(color = ca, fontFamily = "JetBrains Mono")
+      style = list(color = ca, fontFamily = "JetBrains Mono"),
+      cell = function(value) {
+        f_numero(value)
+      }
     ),
 
     episodio = colDef(

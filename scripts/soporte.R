@@ -138,16 +138,10 @@ d <- read_csv("datos/datos.csv") |>
   ungroup() |>
   mutate(
     pelicula = str_flatten(pelicula, collapse = "<br>"),
+    link_letterboxd = str_flatten(link_letterboxd, collapse = "<br>"),
     .by = c(nro, episodio)
   ) |>
   distinct() |>
-  mutate(nro = case_when(
-    nchar(nro) == 1 ~ glue("00{nro}"),
-    nchar(nro) == 2 ~ glue("0{nro}"),
-    .default = glue("{nro}")
-  )
-  ) |>
-  mutate(nro = glue("{icono_numeral}{nro}")) |>
   select(
     nro,
     episodio,
@@ -160,7 +154,7 @@ d <- read_csv("datos/datos.csv") |>
   )
 
 # cantidad de contenido total, en días
-ht_contenido <- sum(spotify$duracion_ms)/1000/3600/24
+ht_contenido <- sum(spotify$duracion_ms) / 1000 / 3600 / 24
 
 ht_dias <- floor(ht_contenido)
 ht_horas <- round((ht_contenido - ht_dias)*24)
@@ -203,11 +197,25 @@ f_fecha <- function(value) {
 
 # función que agrega el link de la película a Letterboxd
 f_pelicula <- function(value, index) {
-  link <- d$link_letterboxd[index]
+  v_link <- d |>
+    filter(nro == index) |>
+    select(link_letterboxd) |>
+    pull() |>
+    str_split(pattern = "<br>") |>
+    list_c()
+
+  v_pelicula <- d |>
+    filter(nro == index) |>
+    select(pelicula) |>
+    pull() |>
+    str_split(pattern = "<br>") |>
+    list_c()
+
   label <- glue(
-    "<a target='_blank' href={link}>{icono_movie} {value}</a>"
+    "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula}</a>"
   )
-  return(label)
+  l <- str_flatten(label, collapse = "<br>")
+  return(l)
 }
 
 # función que agrega el link del episodio a Spotify
@@ -216,6 +224,24 @@ f_episodio <- function(value, index) {
   label <- glue(
     "<a target='_blank' href={link}>{icono_play} {value}</a>"
   )
+  return(label)
+}
+
+# función que agrega formato a los números
+f_numero <- function(value) {
+
+  n <- value
+
+  if (nchar(value) == 1) {
+    n <- glue("00{value}")
+  }
+
+  if (nchar(value) == 2) {
+    n <- glue("0{value}")
+  }
+
+  label <- glue("{icono_numeral}{n}")
+
   return(label)
 }
 
