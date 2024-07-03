@@ -43,7 +43,7 @@ source("scripts/soporte.R")
 
 Desde 2017 han generado un total de `r ht_dias_label` días y `r ht_horas_label` horas de contenido.
 
-La presente tabla contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s).
+La presente tabla interactiva contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s).
 </div>
 :::
 
