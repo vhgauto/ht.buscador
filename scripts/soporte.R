@@ -39,7 +39,7 @@ icono_reloj <- glue(
 )
 
 icono_reloj_header <- glue(
-  '<span class="nf nf-md-clock""></span>'
+  '<span class="nf nf-md-clock"></span>'
 )
 
 icono_calendario <- glue(
@@ -47,7 +47,7 @@ icono_calendario <- glue(
 )
 
 icono_calendario_header <- glue(
-  '<span class="nf nf-fa-calendar""></span>'
+  '<span class="nf nf-fa-calendar"></span>'
 )
 
 icono_numeral <- glue('<span style="color:{cr}">#</span>')
@@ -60,6 +60,14 @@ icono_flecha <- glue(
   '<span class="nf nf-fa-poop" ',
   'style="font-size:{tamaño_icono}em;"></span>'
 )
+
+dos_puntos <- glue("<span style='color:{ca}'>:</span>")
+
+barras <- glue("<span style='color:{ca}'>/</span>")
+
+parentesis_d <- glue("<span style='color:{ca}'>)</span>")
+
+parentesis_i <- glue("<span style='color:{ca}'>(</span>")
 
 # tooltip -----------------------------------------------------------------
 
@@ -129,7 +137,9 @@ link_repositorio <- "https://github.com/vhgauto/ht.buscador"
 
 d <- read_csv("datos/datos.csv") |>
   select(-desc, -id) |>
-  mutate(pelicula = glue("{pelicula} ({pelicula_año})")) |>
+  mutate(pelicula = glue(
+    "{pelicula} {parentesis_i}{pelicula_año}{parentesis_d}")
+  ) |>
   select(-pelicula_año) |>
   arrange(fecha, pelicula) |>
   group_by(fecha, episodio) |>
@@ -174,9 +184,9 @@ f_duracion <- function(value) {
   dur_label <- if_else(
     dur_h == 0,
     glue("{label_m}"),
-    glue("{label_h}:{label_m}")
+    glue("{label_h}{dos_puntos}{label_m}")
   )
-
+  
   dur_label_icono <- glue("{icono_reloj} {dur_label}")
 
   return(dur_label_icono)
@@ -185,7 +195,7 @@ f_duracion <- function(value) {
 # función para dar formato a la fecha de los episodios
 f_fecha <- function(value) {
 
-  fecha_label <- format(value, "%d/%b/%Y") |>
+  fecha_label <- format(value, glue("%d{barras}%b{barras}%Y")) |>
     toupper() |>
     str_remove("\\.")
 
