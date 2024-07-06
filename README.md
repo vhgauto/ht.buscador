@@ -36,8 +36,6 @@ La transformación de datos se llevó a cabo con los paquetes de [`{tidyverse}`]
 
 La tabla se creó con el paquete [`{reactable}`](https://glin.github.io/reactable/), que permite agregar un buscador y acomodar las columnas de forma ascendente/descendente, de acuerdo al contenido.
 
-
-
 ## Sitio web
 
 El sitio web está creado con [Quarto](https://quarto.org/), generando un archivo `.html`, que es usado para su publicación mediante [GitHub Pages](https://pages.github.com/).
@@ -56,9 +54,13 @@ Para asegurar la reproducibilidad se utilizó [Conda](https://docs.conda.io/en/l
 
 Soy entusiasta en el manejo de datos, programación y visualización, siempre en búsqueda de aprender nuevas herramientas informáticas. Pueden ver el resto de mis [repositorios](https://github.com/vhgauto?tab=repositories) para que se hagan una idea.
 
-Escucho <b>HOY TRASNOCHE</b> desde el primer momento, y en este repositorio combino todas estas cosas.
+Escucho <b>HOY TRASNOCHE</b> desde el primer momento. Me permitieron apreciar el cine con mayor profundidad y entender las dinámicas de la industria. Les estoy eternamente agradecidos por el conocimiento y las risas.
 
-Pienso en este sitio web como un recurso de consulta. Para verificar si alguna película fue comentada, o si se desea volver a escuchar un episodio en particular.
+Pienso en este sitio web como un recurso de consulta. Para verificar si alguna película fue analizada, o si se desea volver a escuchar un episodio en particular.
+
+# A futuro
+
+En una versión posterior voy a incorporar los episodios y películas del [Country Club](https://hoytrasnoche.com/vip/), que requieren otro acercamiento ya que no están disponibles en Spotify.
 
 # Aclaración
 
