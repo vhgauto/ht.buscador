@@ -41,17 +41,22 @@ source("scripts/soporte.R")
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 <div style='font-size:1.25em'>
-[<b>Fiorella Sargenti</b>](https://www.instagram.com/fiosargenti) y [<b>Santigo Calori</b>](https://www.instagram.com/sancalori/) conducen [`r ht`](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e), el único y mejor podcast <span style='text-decoration: line-through; text-decoration-color:`r cr`;'>de cine</span> del mundo.
+[<b>Fiorella Sargenti</b>](https://www.instagram.com/fiosargenti) y [<b>Santigo Calori</b>](https://www.instagram.com/sancalori/) conducen [`r ht`](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e) desde 2017, el único y mejor podcast <span style='text-decoration: line-through; text-decoration-color:`r cr`;'>de cine</span> del mundo.
 
-Desde 2017 han generado un total de `r ht_dias_label` días y `r ht_horas_label` horas de contenido.
+En 2023 crearon el [`r cc`](https://hoytrasnoche.com/vip/), con episodios exclusivos.
 
-La presente tabla interactiva contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s).
+En total han generado `r ht_dias_label` días y `r ht_horas_label` de contenido.
+
+La presente tabla interactiva contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s). 
+
+Las entradas de color <span style='color:`r ca`'>amarillo</span> indican que se trata de un episodio del `r cc`.
+
 </div>
 :::
 
-::: {.column width="15%"}
+::: {.column width="5%"}
 :::
 
 ::: {.column width="20%"}

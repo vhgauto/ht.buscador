@@ -20,8 +20,8 @@ r <- reactable(
       searchable = FALSE,
       header = with_tooltip("#", tooltip_nro),
       style = list(color = ca, fontFamily = "JetBrains Mono"),
-      cell = function(value) {
-        f_numero(value)
+      cell = function(value, index) {
+        f_numero(value, index)
       }
     ),
 
@@ -41,11 +41,12 @@ r <- reactable(
       name = "",
       sortable = FALSE,
       searchable = FALSE,
+      style = function(value, index) {
+        f_image_fondo(value, index)
+      },
       align = "center",
       cell = function(value) {
-        image <- img(src = value, style = "height: 200px;", alt = value)
-        tagList(
-          div(style = "display: inline-block; ", image))
+        f_imagen(value)
       }
     ),
 
@@ -54,8 +55,8 @@ r <- reactable(
       html = TRUE,
       sortable = TRUE,
       header = with_tooltip(icono_reloj_header, tooltip_duracion),
-      cell = function(value) {
-        f_duracion(value)
+      cell = function(value, index) {
+        f_duracion(value, index)
       }
     ),
 
@@ -66,8 +67,8 @@ r <- reactable(
       searchable = FALSE,
       header = with_tooltip(icono_calendario_header, tooltip_fecha),
       align = "center",
-      cell = function(value) {
-        f_fecha(value)
+      cell = function(value, index) {
+        f_fecha(value, index)
       }
     ),
 
@@ -91,6 +92,10 @@ r <- reactable(
 
     episodio_url = colDef(
       show = FALSE
+    ),
+    
+    tipo = colDef(
+      show = FALSE
     )
 
   ),
@@ -98,10 +103,10 @@ r <- reactable(
   # texto en la barra de búsqueda
   language = reactableLang(
     searchPlaceholder = "Buscar por episodio o película",
-    noData = "Nada de nada"
+    noData = "Nada de nada."
   ),
 
-  # apariencia gral
+  # apariencia general
   highlight = TRUE,
   striped = TRUE,
   bordered = FALSE,
