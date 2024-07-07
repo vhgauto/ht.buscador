@@ -1,5 +1,7 @@
 <span align="center">
+
 # Tabla interactiva HOY TRASNOCHE
+
 </span>
 
 <p align="center">
@@ -13,7 +15,9 @@ El sitio web contiene los episodios, fecha de publicación y duración, junto co
 La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración, fecha de publicación y nombre de película, o realizar una búsqueda por nombre de episodio/película.
 
 <span align="center">
+
 # [LINK :link:](https://vhgauto.github.io/ht.buscador/)
+
 </span>
 
 # Descripción
