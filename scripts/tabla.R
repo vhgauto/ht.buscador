@@ -7,7 +7,7 @@ r <- reactable(
   # orden predeterminado por número de episodio, descendente
   defaultSorted = "nro",
   defaultSortOrder = "desc",
-  # búsqueda en toda la tabla
+  # búsqueda en todas las columnas, excepto que se indique lo contrario
   searchable = TRUE,
   # todas las filas en una única página
   pagination = FALSE,
@@ -18,6 +18,7 @@ r <- reactable(
       minWidth = 6,
       html = TRUE,
       searchable = FALSE,
+      sortable = TRUE,
       header = with_tooltip("#", tooltip_nro),
       style = list(color = ca, fontFamily = "JetBrains Mono"),
       cell = function(value, index) {
@@ -29,6 +30,7 @@ r <- reactable(
       minWidth = 36,
       html = TRUE,
       sortable = FALSE,
+      searchable = TRUE,
       align = "left",
       header = with_tooltip("EPISODIO", tooltip_episodio),
       cell = function(value, index) {
@@ -54,6 +56,7 @@ r <- reactable(
       minWidth = 8,
       html = TRUE,
       sortable = TRUE,
+      searchable = FALSE,
       header = with_tooltip(icono_reloj_header, tooltip_duracion),
       cell = function(value, index) {
         f_duracion(value, index)
@@ -93,7 +96,7 @@ r <- reactable(
     episodio_url = colDef(
       show = FALSE
     ),
-    
+
     tipo = colDef(
       show = FALSE
     )
