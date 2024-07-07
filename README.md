@@ -1,4 +1,8 @@
+<span align="center">
+
 # Tabla interactiva HOY TRASNOCHE
+
+</span>
 
 <p align="center">
 <img src="img/logo.jpeg" width=40% align="center">
@@ -12,7 +16,7 @@ La tabla es interactiva, por lo que se puede ordenar por número de episodio, du
 
 <span align="center">
 
-# [LINK](https://vhgauto.github.io/ht.buscador/)
+# [LINK :link:](https://vhgauto.github.io/ht.buscador/)
 
 </span>
 
