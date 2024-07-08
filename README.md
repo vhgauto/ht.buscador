@@ -71,7 +71,7 @@ Pienso en este sitio web como un recurso de consulta. Para verificar si alguna p
 
 ### A futuro
 
-En una versión posterior voy a aqutomatizar los episodios y películas del <b>COUNTRY CLUB</b>, que requieren otro acercamiento ya que no están disponibles en Spotify.
+En una versión posterior voy a automatizar los episodios y películas del <b>COUNTRY CLUB</b>, que requieren otro acercamiento ya que no están disponibles en Spotify.
 
 ### Aclaración
 
