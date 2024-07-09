@@ -324,15 +324,28 @@ f_numero <- function(value, index) {
 }
 
 # función para mostrar las imágenes
-f_imagen <- function(value) {
-  image <- img(src = value, style = "height: 200px", alt = value)
-  tagList(div(style = "display: inline-block", image))
+# las imágenes del Country Club con borde amarillo
+f_imagen <- function(value, index) {
+  if (d$tipo[index] == "pago") {
+    image <- img(
+    src = value,
+    style = glue("height: 200px; border:5px solid {ca};"),
+    alt = value)
+    tagList(div(style = "display: inline-block", image))
+  } else {
+    image <- img(
+    src = value,
+    style = glue("height: 200px"),
+    alt = value)
+    tagList(div(style = "display: inline-block", image))
+  }
+
 }
 
 # función para cambiar el fondo de las celdas con imágenes
 f_image_fondo <- function(value, index) {
   if (d$tipo[index] == "pago") {
-    list(background = ca)
+    list(border = glue("10px solid {ca}"))
   } else {
     list(background = "transparent")
   }

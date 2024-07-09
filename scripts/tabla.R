@@ -43,12 +43,9 @@ r <- reactable(
       name = "",
       sortable = FALSE,
       searchable = FALSE,
-      style = function(value, index) {
-        f_image_fondo(value, index)
-      },
       align = "center",
-      cell = function(value) {
-        f_imagen(value)
+      cell = function(value, index) {
+        f_imagen(value, index)
       }
     ),
 
