@@ -51,7 +51,7 @@ En total han generado `r ht_dias_label` días y `r ht_horas_label` de contenido.
 
 La presente tabla interactiva contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s). 
 
-Las entradas de color <span style='color:`r ca`'>amarillo</span> indican que se trata de un episodio del `r cc`.
+Las entradas de color <span style='color:`r ca`'>amarillo</span> indican que se trata de un episodio del [`r cc`](https://hoytrasnoche.com/vip/).
 
 </div>
 :::
