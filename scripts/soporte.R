@@ -68,13 +68,13 @@ icono_flecha <- glue(
   '<span class="nf nf-fa-poop" ',
   'style="font-size:{tamaño_icono}em;"></span>')
 
-dos_puntos <- glue("<span style='color:{ca}'>:</span>")
+dos_puntos <- glue("<span style='color:{cr}'>:</span>")
 
-barras <- glue("<span style='color:{ca}'>/</span>")
+barras <- glue("<span style='color:{cr}'>/</span>")
 
-parentesis_d <- glue("<span style='color:{ca}'>)</span>")
+parentesis_d <- glue("<span style='color:{cr}'>)</span>")
 
-parentesis_i <- glue("<span style='color:{ca}'>(</span>")
+parentesis_i <- glue("<span style='color:{cr}'>(</span>")
 
 # redes sociales ----------------------------------------------------------
 
