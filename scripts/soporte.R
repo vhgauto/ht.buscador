@@ -106,12 +106,12 @@ redes <- tibble(
 
 # HOY TRASNOCHE
 ht <- glue(
-  "<b style='font-family: Friz Quadrata Bold; color: {ca}'>HOY TRASNOCHE</b>"
+  "<b style='font-family: Friz Quadrata Std; color: {ca}'>HOY TRASNOCHE</b>"
 )
 
 # COUNTRY CLUB
 cc <- glue(
-  "<b style='font-family: Friz Quadrata Bold; color: {ca}'>COUNTRY CLUB</b>"
+  "<b style='font-family: Friz Quadrata Std; color: {ca}'>COUNTRY CLUB</b>"
 )
 
 # fecha y hora de última actualización
@@ -121,13 +121,13 @@ ahora_label <- glue(
 )
 
 # encabezados de la tabla
-tbl_episodio <- glue(
-  "<b style='font-family: Friz Quadrata Bold; color: {ca}'>EPISODIO</b>"
-)
+# tbl_episodio <- glue(
+#   "<b style='font-family: Friz Quadrata Std; color: {ca}'>EPISODIO</b>"
+# )
 
-tbl_pelicula <- glue(
-  "<b style='font-family: Friz Quadrata Bold; color: {ca}'>PELíCULA</b>"
-)
+# tbl_pelicula <- glue(
+#   "<b style='font-family: Friz Quadrata Std; color: {ca}'>PELíCULA</b>"
+# )
 
 # link al repositorio
 link_repositorio <- "https://github.com/vhgauto/ht.buscador"
