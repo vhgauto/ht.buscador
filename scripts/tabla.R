@@ -4,13 +4,17 @@
 r <- reactable(
   # datos
   data = d,
+
   # orden predeterminado por número de episodio, descendente
   defaultSorted = "nro",
   defaultSortOrder = "desc",
+
   # búsqueda en todas las columnas, excepto que se indique lo contrario
   searchable = TRUE,
+
   # todas las filas en una única página
   pagination = FALSE,
+
   # configuración individual por columna
   columns = list(
 
@@ -78,14 +82,14 @@ r <- reactable(
       searchable = TRUE,
       sortable = FALSE,
       header = with_tooltip("PELÍCULA", tooltip_pelicula),
-      headerStyle = list(paddingLeft = "50px", fontWeight = "bold"),
+      headerStyle = list(paddingLeft = "50px"),
       style = list(textAlign = "left", paddingLeft = "50px"),
       cell = function(value, index) {
         f_pelicula(value, index)
       }
     ),
 
-    # oculto dos columnas con links
+    # oculto columnas
     link_letterboxd = colDef(
       show = FALSE
     ),
@@ -128,7 +132,8 @@ r <- reactable(
     cellStyle = list(fontFamily = "Ubuntu"),
     headerStyle = list(
       color = ca, fontFamily = "Friz Quadrata Std", fontSize = 30,
-      fontWeight = "bold", textAlign = "center"),
+      fontWeight = "bold", textAlign = "center"
+    ),
     highlightColor = cg2,
     stripedColor = cg1,
     # estilo de la barra de búsqueda

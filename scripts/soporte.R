@@ -120,15 +120,6 @@ ahora_label <- glue(
   "<p style='text-align:right; color:{cg4}'>{ahora}</p>"
 )
 
-# encabezados de la tabla
-# tbl_episodio <- glue(
-#   "<b style='font-family: Friz Quadrata Std; color: {ca}'>EPISODIO</b>"
-# )
-
-# tbl_pelicula <- glue(
-#   "<b style='font-family: Friz Quadrata Std; color: {ca}'>PELíCULA</b>"
-# )
-
 # link al repositorio
 link_repositorio <- "https://github.com/vhgauto/ht.buscador"
 
