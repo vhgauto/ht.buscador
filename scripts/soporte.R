@@ -28,45 +28,57 @@ tamaño_icono <- 1.3
 # todos de la fuente Nerd Font
 # _cc -> indica que es un ícono para el Country Club
 icono_movie <- glue(
-  '<span class="nf nf-md-movie_open" style="color:{cr}"></span>')
+  '<span class="nf nf-md-movie_open" style="color:{cr}"></span>'
+)
 
 icono_movie_cc <- glue(
-  '<span class="nf nf-md-movie_open" style="color:{ca}"></span>')
+  '<span class="nf nf-md-movie_open" style="color:{ca}"></span>'
+)
 
 icono_play <- glue(
-  '<span class="nf nf-md-play" style="color:{cr}"></span>')
+  '<span class="nf nf-md-play" style="color:{cr}"></span>'
+)
 
 icono_play_cc <- glue(
-  '<span class="nf nf-md-play" style="color:{ca}"></span>')
+  '<span class="nf nf-md-play" style="color:{ca}"></span>'
+)
 
 icono_reloj <- glue(
-  '<span class="nf nf-md-clock" style="color:{cr}"></span>')
+  '<span class="nf nf-md-clock" style="color:{cr}"></span>'
+)
 
 icono_reloj_cc <- glue(
-  '<span class="nf nf-md-clock" style="color:{ca}"></span>')
+  '<span class="nf nf-md-clock" style="color:{ca}"></span>'
+)
 
 icono_reloj_header <- glue(
-  '<span class="nf nf-md-clock"></span>')
+  '<span class="nf nf-md-clock"></span>'
+)
 
 icono_calendario <- glue(
-  '<span class="nf nf-fa-calendar" style="color:{cr}"></span>')
+  '<span class="nf nf-fa-calendar" style="color:{cr}"></span>'
+)
 
 icono_calendario_cc <- glue(
-  '<span class="nf nf-fa-calendar" style="color:{ca}"></span>')
+  '<span class="nf nf-fa-calendar" style="color:{ca}"></span>'
+)
 
 icono_calendario_header <- glue(
-  '<span class="nf nf-fa-calendar"></span>')
+  '<span class="nf nf-fa-calendar"></span>'
+)
 
 icono_numeral <- glue('<span style="color:{cr}">#</span>')
 
 icono_numeral_cc <- glue('<span style="color:{ca}">#</span>')
 
 icono_github <- glue(
-  '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>')
+  '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>'
+)
 
 icono_flecha <- glue(
   '<span class="nf nf-fa-poop" ',
-  'style="font-size:{tamaño_icono}em;"></span>')
+  'style="font-size:{tamaño_icono}em;"></span>'
+)
 
 dos_puntos <- glue("<span style='color:{cr}'>:</span>")
 
@@ -83,9 +95,11 @@ redes <- tibble(
   red = c("twitter", "instagram", "github", "mastodon"),
   link = c(
     "https://twitter.com/vhgauto", "https://www.instagram.com/vhgauto",
-    "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"),
+    "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"
+  ),
   class = c(
-    "nf-md-twitter", "nf-md-instagram", "nf-md-github", "nf-md-mastodon")
+    "nf-md-twitter", "nf-md-instagram", "nf-md-github", "nf-md-mastodon"
+  )
 ) |>
   mutate(
     icono_label = glue(
@@ -212,7 +226,8 @@ f_duracion <- function(value, index) {
   if (d$tipo[index] == "pago") {
 
     dur_label_icono <- glue(
-      "{icono_reloj_cc} <span style='color:{ca}'>{dur_label}</span>")
+      "{icono_reloj_cc} <span style='color:{ca}'>{dur_label}</span>"
+    )
     return(dur_label_icono)
 
   } else {
@@ -234,7 +249,8 @@ f_fecha <- function(value, index) {
   if (d$tipo[index] == "pago") {
 
     fecha_label_icono <- glue(
-      "{icono_calendario_cc} <span style='color:{ca}'>{fecha_label}</span>")
+      "{icono_calendario_cc} <span style='color:{ca}'>{fecha_label}</span>"
+    )
     return(fecha_label_icono)
 
   } else {
@@ -266,14 +282,16 @@ f_pelicula <- function(value, index) {
 
     label <- glue(
       "<a target='_blank' href={v_link}>{icono_movie_cc} ",
-      "<span style='color:{ca}'>{v_pelicula}</span> </a>")
+      "<span style='color:{ca}'>{v_pelicula}</span> </a>"
+    )
     l <- str_flatten(label, collapse = "<br>")
     return(l)
 
   } else {
 
     label <- glue(
-      "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula}</a>")
+      "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula}</a>"
+    )
     l <- str_flatten(label, collapse = "<br>")
     return(l)
 
@@ -288,13 +306,13 @@ f_episodio <- function(value, index) {
 
     label <- glue(
       "<a target='_blank' href={link}>{icono_play_cc} ",
-      "<span style='color:{ca}'>{value}</span> </a>")
+      "<span style='color:{ca}'>{value}</span> </a>"
+    )
     return(label)
 
   } else {
 
-    label <- glue(
-      "<a target='_blank' href={link}>{icono_play} {value}</a>")
+    label <- glue("<a target='_blank' href={link}>{icono_play} {value}</a>")
     return(label)
 
   }
@@ -314,9 +332,12 @@ f_numero <- function(value, index) {
   }
 
   if (d$tipo[index] == "pago") {
+
     label <- glue("{icono_numeral_cc}{n}")
     return(label)
+
   } else {
+
     label <- glue("{icono_numeral}{n}")
     return(label)
 
@@ -365,10 +386,12 @@ f_image_fondo <- function(value, index) {
 with_tooltip <- function(value, tooltip, ...) {
   div(
     style = glue(
-    "text-decoration: underline;",
-    "text-decoration-color: {cr};",
-    "text-decoration-style: solid;",
-    "text-underline-offset: 10px;",
-    "cursor: help"),
-    tippy(value, tooltip, ...))
+      "text-decoration: underline;",
+      "text-decoration-color: {cr};",
+      "text-decoration-style: solid;",
+      "text-underline-offset: 10px;",
+      "cursor: help"
+    ),
+    tippy(value, tooltip, ...)
+  )
 }
