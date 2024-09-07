@@ -77,7 +77,6 @@ parentesis_d <- glue("<span style='color:{cr}'>)</span>")
 parentesis_i <- glue("<span style='color:{cr}'>(</span>")
 
 # redes sociales ----------------------------------------------------------
-
 # tibble con íconos, links y formato
 
 redes <- tibble(
@@ -101,7 +100,6 @@ redes <- tibble(
   )
 
 # extras ------------------------------------------------------------------
-
 # texto HOY TRASNOCHE, última actualización y repositorio
 
 # HOY TRASNOCHE
@@ -124,7 +122,6 @@ ahora_label <- glue(
 link_repositorio <- "https://github.com/vhgauto/ht.buscador"
 
 # tooltip -----------------------------------------------------------------
-
 # texto a mostrar al pasar el mouse sobre los encabezados de las columnas
 
 tooltip_nro <- glue("Número de episodio ordenado cronológicamente")
@@ -144,7 +141,6 @@ tooltip_pelicula <- glue(
   "Letterboxd</b>.")
 
 # datos -------------------------------------------------------------------
-
 # lectura de datos
 # agrupo las películas en el mismo episodio
 
@@ -194,13 +190,12 @@ if (ht_horas == 1) {
 }
 
 # funciones ---------------------------------------------------------------
-
 # las funciones incluyen un estilo condicional si pertenecen o no 
 # al Country Club
 
 # función para dar formato a la duración de los episodios
 f_duracion <- function(value, index) {
-  
+
   minutos <- round(value / 1000 / 60)
   dur_h <- floor(minutos / 60)
   dur_m <- minutos - dur_h * 60
@@ -211,23 +206,21 @@ f_duracion <- function(value, index) {
     glue("{label_m}"),
     glue("{label_h}:{label_m}")
   )
-  
+
   if (d$tipo[index] == "pago") {
-    
+
     dur_label_icono <- glue(
       "{icono_reloj_cc} <span style='color:{ca}'>{dur_label}</span>")
-    
     return(dur_label_icono)
-    
+
   } else {
 
     dur_label <- str_replace(dur_label, ":", dos_puntos)
     dur_label_icono <- glue("{icono_reloj} {dur_label}")
     return(dur_label_icono)
-    
+
   }
-  
-  
+
 }
 
 # función para dar formato a la fecha de los episodios
@@ -236,22 +229,20 @@ f_fecha <- function(value, index) {
   fecha_label <- format(value, glue("%d/%b/%Y")) |>
     toupper() |>
     str_remove("\\.")
-  
+
   if (d$tipo[index] == "pago") {
-    
+
     fecha_label_icono <- glue(
       "{icono_calendario_cc} <span style='color:{ca}'>{fecha_label}</span>")
-    
     return(fecha_label_icono)
-    
+
   } else {
+
     fecha_label <- str_replace_all(fecha_label, "/", barras)
     fecha_label_icono <- glue("{icono_calendario} {fecha_label}")
-
     return(fecha_label_icono)
-    
-  }
 
+  }
 }
 
 # función que agrega el link de la película a Letterboxd
@@ -269,42 +260,43 @@ f_pelicula <- function(value, index) {
     pull() |>
     str_split(pattern = "<br>") |>
     list_c()
-  
+
   if (d$tipo[index] == "pago") {
-    
+
     label <- glue(
       "<a target='_blank' href={v_link}>{icono_movie_cc} ",
       "<span style='color:{ca}'>{v_pelicula}</span> </a>")
     l <- str_flatten(label, collapse = "<br>")
     return(l)
-    
+
   } else {
-    
+
     label <- glue(
       "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula}</a>")
     l <- str_flatten(label, collapse = "<br>")
     return(l)
-    
-  }
 
-  
+  }
 }
 
 # función que agrega el link del episodio a Spotify
 f_episodio <- function(value, index) {
   link <- d$episodio_url[index]
-  
+
   if (d$tipo[index] == "pago") {
+
     label <- glue(
       "<a target='_blank' href={link}>{icono_play_cc} ",
       "<span style='color:{ca}'>{value}</span> </a>")
     return(label)
+
   } else {
+
     label <- glue(
       "<a target='_blank' href={link}>{icono_play} {value}</a>")
     return(label)
+
   }
-  
 }
 
 # función que agrega formato a los números
@@ -319,42 +311,52 @@ f_numero <- function(value, index) {
   if (nchar(value) == 2) {
     n <- glue("0{value}")
   }
-  
+
   if (d$tipo[index] == "pago") {
     label <- glue("{icono_numeral_cc}{n}")
     return(label)
   } else {
     label <- glue("{icono_numeral}{n}")
     return(label)
-  }
 
+  }
 }
 
 # función para mostrar las imágenes
 # las imágenes del Country Club con borde amarillo
 f_imagen <- function(value, index) {
   if (d$tipo[index] == "pago") {
+
     image <- img(
-    src = value,
-    style = glue("height: 200px; border:5px solid {ca};"),
-    alt = value)
+      src = value,
+      style = glue("height: 200px; border:5px solid {ca};"),
+      alt = value
+    )
+
     tagList(div(style = "display: inline-block", image))
   } else {
+
     image <- img(
-    src = value,
-    style = glue("height: 200px"),
-    alt = value)
+      src = value,
+      style = glue("height: 200px"),
+      alt = value
+    )
+
     tagList(div(style = "display: inline-block", image))
   }
-
 }
 
 # función para cambiar el fondo de las celdas con imágenes
 f_image_fondo <- function(value, index) {
+
   if (d$tipo[index] == "pago") {
+
     list(border = glue("10px solid {ca}"))
+
   } else {
+
     list(background = "transparent")
+
   }
 }
 
