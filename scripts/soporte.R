@@ -129,7 +129,7 @@ tooltip_nro <- glue("Número de episodio ordenado cronológicamente")
 tooltip_episodio <- glue(
   "Hacer clik en el nombre del episodio para escucharlo ",
   "en <b>Spotify</b> o ",
-  "en el <b style='color:{ca}'>{cc}</b>.",
+  "en el <b style='color:{ca}'>{cc}</b>."
 )
 
 tooltip_duracion <- glue("Duración del episodio.")
