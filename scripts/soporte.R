@@ -149,8 +149,11 @@ tooltip_pelicula <- glue(
 # agrupo las películas en el mismo episodio
 
 d <- read_csv("datos/datos.csv", show_col_types = FALSE) |>
-  mutate(pelicula = glue(
-    "{pelicula} {parentesis_i}{pelicula_año}{parentesis_d}")
+  mutate(pelicula = if_else(
+    tipo == "pago",
+    glue("{pelicula} ({pelicula_año})"),
+    glue("{pelicula} {parentesis_i}{pelicula_año}{parentesis_d}")
+    )
   ) |>
   select(-pelicula_año) |>
   arrange(fecha, pelicula) |>
@@ -206,17 +209,19 @@ f_duracion <- function(value, index) {
   dur_label <- if_else(
     dur_h == 0,
     glue("{label_m}"),
-    glue("{label_h}{dos_puntos}{label_m}")
+    glue("{label_h}:{label_m}")
   )
   
   if (d$tipo[index] == "pago") {
     
     dur_label_icono <- glue(
       "{icono_reloj_cc} <span style='color:{ca}'>{dur_label}</span>")
+    
     return(dur_label_icono)
     
   } else {
-    
+
+    dur_label <- str_replace(dur_label, ":", dos_puntos)
     dur_label_icono <- glue("{icono_reloj} {dur_label}")
     return(dur_label_icono)
     
@@ -228,7 +233,7 @@ f_duracion <- function(value, index) {
 # función para dar formato a la fecha de los episodios
 f_fecha <- function(value, index) {
 
-  fecha_label <- format(value, glue("%d{barras}%b{barras}%Y")) |>
+  fecha_label <- format(value, glue("%d/%b/%Y")) |>
     toupper() |>
     str_remove("\\.")
   
@@ -236,11 +241,13 @@ f_fecha <- function(value, index) {
     
     fecha_label_icono <- glue(
       "{icono_calendario_cc} <span style='color:{ca}'>{fecha_label}</span>")
+    
     return(fecha_label_icono)
     
   } else {
-    
+    fecha_label <- str_replace_all(fecha_label, "/", barras)
     fecha_label_icono <- glue("{icono_calendario} {fecha_label}")
+
     return(fecha_label_icono)
     
   }
