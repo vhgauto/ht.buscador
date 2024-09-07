@@ -32,7 +32,7 @@ r <- reactable(
       sortable = FALSE,
       searchable = TRUE,
       align = "left",
-      header = with_tooltip("EPISODIO", tooltip_episodio),
+      header = with_tooltip(tbl_episodio, tooltip_episodio),
       cell = function(value, index) {
         f_episodio(value, index)
       }
@@ -77,7 +77,7 @@ r <- reactable(
       html = TRUE,
       searchable = TRUE,
       sortable = FALSE,
-      header = with_tooltip("PELÍCULA", tooltip_pelicula),
+      header = with_tooltip(tbl_pelicula, tooltip_pelicula),
       headerStyle = list(paddingLeft = "50px"),
       style = list(textAlign = "left", paddingLeft = "50px"),
       cell = function(value, index) {
