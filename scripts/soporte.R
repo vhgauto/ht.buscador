@@ -128,17 +128,19 @@ tooltip_nro <- glue("Número de episodio ordenado cronológicamente")
 
 tooltip_episodio <- glue(
   "Hacer clik en el nombre del episodio para escucharlo ",
-  "en el <b style='color:{ca}'>{cc}</b> o ",
-  "en <b>Spotify</b>.")
+  "en <b>Spotify</b> o ",
+  "en el <b style='color:{ca}'>{cc}</b>.",
+)
 
 tooltip_duracion <- glue("Duración del episodio.")
 
 tooltip_fecha <- glue("Fecha de publicación del episodio.")
 
 tooltip_pelicula <- glue(
-  "Los nombres de las películas están (casi todos) en inglés. El ",
+  "Los nombres de las películas están, casi todos, en inglés. El ",
   "link redirige al sitio de la película en <b style='color:{ca}'>",
-  "Letterboxd</b>.")
+  "Letterboxd</b>."
+)
 
 # datos -------------------------------------------------------------------
 # lectura de datos
@@ -149,7 +151,7 @@ d <- read_csv("datos/datos.csv", show_col_types = FALSE) |>
     tipo == "pago",
     glue("{pelicula} ({pelicula_año})"),
     glue("{pelicula} {parentesis_i}{pelicula_año}{parentesis_d}")
-    )
+  )
   ) |>
   select(-pelicula_año) |>
   arrange(fecha, pelicula) |>
@@ -184,7 +186,7 @@ ht_horas <- round((ht_contenido - ht_dias)*24)
 
 ht_dias_label <- glue("<b style='color:{cr}'>{ht_dias}</b>")
 if (ht_horas == 1) {
-   ht_horas_label <- glue("<b style='color:{cr}'>{ht_horas}</b> hora")
+  ht_horas_label <- glue("<b style='color:{cr}'>{ht_horas}</b> hora")
 } else {
   ht_horas_label <- glue("<b style='color:{cr}'>{ht_horas}</b> horas")
 }
@@ -220,7 +222,6 @@ f_duracion <- function(value, index) {
     return(dur_label_icono)
 
   }
-
 }
 
 # función para dar formato a la fecha de los episodios
