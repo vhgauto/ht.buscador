@@ -26,7 +26,6 @@ cg4 <- "#7F7F7F" # grey50
 tamaño_icono <- 1.3
 
 # todos de la fuente Nerd Font
-# _cc -> indica que es un ícono para el Country Club
 icono_movie <- glue(
   '<span class="nf nf-md-movie_open" style="color:{cr}"></span>'
 )
@@ -66,10 +65,6 @@ icono_calendario_cc <- glue(
 icono_calendario_header <- glue(
   '<span class="nf nf-fa-calendar"></span>'
 )
-
-icono_numeral <- glue('<span style="color:{cr}">#</span>')
-
-icono_numeral_cc <- glue('<span style="color:{ca}">#</span>')
 
 icono_github <- glue(
   '<span class="nf nf-md-github" style="font-size:{tamaño_icono}em"></span>'
@@ -206,7 +201,7 @@ if (ht_horas == 1) {
 }
 
 # funciones ---------------------------------------------------------------
-# las funciones incluyen un estilo condicional si pertenecen o no 
+# las funciones incluyen un estilo condicional si pertenecen o no
 # al Country Club
 
 # función para dar formato a la duración de los episodios
@@ -333,12 +328,12 @@ f_numero <- function(value, index) {
 
   if (d$tipo[index] == "pago") {
 
-    label <- glue("{icono_numeral_cc}{n}")
+    label <- glue("<span style='color: {ca}'>#{n}</span>")
     return(label)
 
   } else {
 
-    label <- glue("{icono_numeral}{n}")
+    label <- glue("<span style='color: {cr}'>#</span>{n}")
     return(label)
 
   }

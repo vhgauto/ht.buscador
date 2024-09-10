@@ -24,7 +24,7 @@ r <- reactable(
       searchable = FALSE,
       sortable = TRUE,
       header = with_tooltip("#", tooltip_nro),
-      style = list(color = ca, fontFamily = "JetBrains Mono"),
+      style = list(fontFamily = "JetBrains Mono"),
       cell = function(value, index) {
         f_numero(value, index)
       }
