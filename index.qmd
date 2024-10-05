@@ -38,31 +38,31 @@ source("scripts/soporte.R")
 ![](img/logo.jpeg)
 :::
 
-::: {.column width="5%"}
+::: {.column width="15%"}
 :::
 
-::: {.column width="50%"}
+::: {.column width="35%"}
 <div style='font-size:1.25em'>
 [<b>Fiorella Sargenti</b>](https://www.instagram.com/fiosargenti) y [<b>Santigo Calori</b>](https://www.instagram.com/sancalori/) conducen [`r ht`](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e) desde 2017, el único y mejor podcast <span style='text-decoration: line-through; text-decoration-color:`r cr`;'>de cine</span> del mundo.
 
-En 2023 crearon el [`r cc`](https://hoytrasnoche.com/vip/), con episodios exclusivos.
+En total han generado `r ht_dias_label` días y `r ht_horas_label` de contenido, con `r ht_episodios_label` episodios y `r ht_peliculas_label` películas.
 
-En total han generado `r ht_dias_label` días y `r ht_horas_label` de contenido.
+La presente tabla interactiva contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s).
 
-La presente tabla interactiva contiene los episodios <i>tradicionales</i>, en los que se discute una (o múltiples) película(s). 
-
-Las entradas en <span style='color:`r ca`'>dorado</span> indican que se trata de un episodio del [`r cc`](https://hoytrasnoche.com/vip/).
+Las entradas en <span style='color:`r ca`'>dorado</span> indican que se trata de un episodio exclusivo del [`r cc`](https://hoytrasnoche.com/vip/).
 
 </div>
 :::
 
-::: {.column width="5%"}
+::: {.column width="15%"}
 :::
 
-::: {.column width="20%"}
+::: {.column width="15%"}
+<div style='font-size:1.25em'>
 <p style='text-align:right;'>Autor: <b>Víctor Gauto</b><br>
 `r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`<br><br>
 [Ver en `r icono_github`](`r link_repositorio`) </p>
+</div>
 :::
 
 ::::

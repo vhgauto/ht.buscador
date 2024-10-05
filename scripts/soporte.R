@@ -185,7 +185,7 @@ d <- read_csv("datos/datos.csv", show_col_types = FALSE) |>
     tipo
   )
 
-# cantidad de contenido total, en días
+# cantidad de contenido total, en días y horas
 ht_contenido_ht <- sum(spotify$duracion_ms) / 1000 / 3600 / 24
 ht_contenido_cc <- sum(country_club$duracion_ms) / 1000 / 3600 / 24
 ht_contenido <- ht_contenido_ht + ht_contenido_cc
@@ -199,6 +199,15 @@ if (ht_horas == 1) {
 } else {
   ht_horas_label <- glue("<b style='color:{cr}'>{ht_horas}</b> horas")
 }
+
+# cantidad de episodios y películas
+ht_episodios <- distinct(datos, episodio) |>
+  nrow()
+ht_episodios_label <- glue("<b style='color:{cr}'>{ht_episodios}</b>")
+
+ht_peliculas <- distinct(datos, pelicula, pelicula_año) |>
+  nrow()
+ht_peliculas_label <- glue("<b style='color:{cr}'>{ht_peliculas}</b>")
 
 # funciones ---------------------------------------------------------------
 # las funciones incluyen un estilo condicional si pertenecen o no
