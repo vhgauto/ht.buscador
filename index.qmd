@@ -87,9 +87,11 @@ r
 :::
 
 ::: {.column width="60%"}
+<div style='font-size:1.25em'>
 <p style='text-align:right;'>Autor: <b>Víctor Gauto</b><br>
 `r redes$label[1]` `r redes$label[2]` `r redes$label[3]` `r redes$label[4]`<br><br>
 [Ver en `r icono_github`](`r link_repositorio`)</p>
+</div>
 :::
 :::
 :::
@@ -98,7 +100,7 @@ r
 <br>
 <br>
 <br>
-<p style='color:`r cg4`'>Este sitio web, su desarrollo y mantenimiento son un proyecto personal. No estoy involucrado de ninguna manera con el podcast ni con sus conductores.</p>
+<center style='color:`r cg4`'>Este sitio web, su desarrollo y mantenimiento es un proyecto personal. No estoy involucrado de ninguna manera con el podcast ni con sus conductores.</center>
 
 <br>
 <br>
