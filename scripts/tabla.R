@@ -94,6 +94,10 @@ r <- reactable(
       show = FALSE
     ),
 
+    pelicula_año = colDef(
+      show = FALSE
+    ),
+
     episodio_url = colDef(
       show = FALSE
     ),

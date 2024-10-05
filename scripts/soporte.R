@@ -79,9 +79,9 @@ dos_puntos <- glue("<span style='color:{cr}'>:</span>")
 
 barras <- glue("<span style='color:{cr}'>/</span>")
 
-parentesis_d <- glue("<span style='color:{cr}'>)</span>")
-
 parentesis_i <- glue("<span style='color:{cr}'>(</span>")
+
+parentesis_d <- glue("<span style='color:{cr}'>)</span>")
 
 # redes sociales ----------------------------------------------------------
 # tibble con íconos, links y formato
@@ -154,21 +154,20 @@ tooltip_pelicula <- glue(
 # datos -------------------------------------------------------------------
 # lectura de datos
 # agrupo las películas en el mismo episodio
+# mantengo el nombre de película y año de película por separado
+# es importante que el formato de los caracteres especiales y del texto
+# estén dados por funciones aplicadas a las celdas, y NO que estén explícitas
+# en el contenido de la celda
+# porque eso afecta la búsqueda
 
 d <- read_csv("datos/datos.csv", show_col_types = FALSE) |>
-  mutate(pelicula = if_else(
-    tipo == "pago",
-    glue("{pelicula} ({pelicula_año})"),
-    glue("{pelicula} {parentesis_i}{pelicula_año}{parentesis_d}")
-  )
-  ) |>
-  select(-pelicula_año) |>
   arrange(fecha, pelicula) |>
   group_by(fecha, episodio) |>
   mutate(nro = cur_group_id(), .before = 1) |>
   ungroup() |>
   mutate(
     pelicula = str_flatten(pelicula, collapse = "<br>"),
+    pelicula_año = str_flatten(pelicula_año, collapse = "<br>"),
     link_letterboxd = str_flatten(link_letterboxd, collapse = "<br>"),
     .by = c(nro, episodio)
   ) |>
@@ -180,6 +179,7 @@ d <- read_csv("datos/datos.csv", show_col_types = FALSE) |>
     duracion_ms,
     fecha,
     pelicula,
+    pelicula_año,
     link_letterboxd,
     episodio_url,
     tipo
@@ -268,16 +268,26 @@ f_fecha <- function(value, index) {
 
 # función que agrega el link de la película a Letterboxd
 f_pelicula <- function(value, index) {
+  # link de la película en Letterboxd
   v_link <- d |>
+  filter(nro == index) |>
+  select(link_letterboxd) |>
+  pull() |>
+  str_split(pattern = "<br>") |>
+  list_c()
+
+  # nombre de la película
+  v_pelicula <- d |>
     filter(nro == index) |>
-    select(link_letterboxd) |>
+    select(pelicula) |>
     pull() |>
     str_split(pattern = "<br>") |>
     list_c()
 
-  v_pelicula <- d |>
+  # año de la película
+  v_pelicula_año <- d |>
     filter(nro == index) |>
-    select(pelicula) |>
+    select(pelicula_año) |>
     pull() |>
     str_split(pattern = "<br>") |>
     list_c()
@@ -286,7 +296,7 @@ f_pelicula <- function(value, index) {
 
     label <- glue(
       "<a target='_blank' href={v_link}>{icono_movie_cc} ",
-      "<span style='color:{ca}'>{v_pelicula}</span> </a>"
+      "<span style='color:{ca}'>{v_pelicula} ({v_pelicula_año})</span> </a>"
     )
     l <- str_flatten(label, collapse = "<br>")
     return(l)
@@ -294,7 +304,8 @@ f_pelicula <- function(value, index) {
   } else {
 
     label <- glue(
-      "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula}</a>"
+      "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula} ",
+      "{parentesis_i}{v_pelicula_año}{parentesis_d}</a>"
     )
     l <- str_flatten(label, collapse = "<br>")
     return(l)
