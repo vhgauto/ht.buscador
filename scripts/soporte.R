@@ -87,13 +87,15 @@ parentesis_d <- glue("<span style='color:{cr}'>)</span>")
 # tibble con íconos, links y formato
 
 redes <- tibble(
-  red = c("twitter", "instagram", "github", "mastodon"),
+  red = c("twitter", "instagram", "github", "mastodon", "email"),
   link = c(
     "https://twitter.com/vhgauto", "https://www.instagram.com/vhgauto",
-    "https://github.com/vhgauto", "https://mastodon.social/@vhgauto"
+    "https://github.com/vhgauto", "https://mastodon.social/@vhgauto",
+    "mailto:victor.gauto@outlook.com"
   ),
   class = c(
-    "nf-md-twitter", "nf-md-instagram", "nf-md-github", "nf-md-mastodon"
+    "nf-md-twitter", "nf-md-instagram", "nf-md-github", "nf-md-mastodon",
+    "nf-fa-envelope"
   )
 ) |>
   mutate(
