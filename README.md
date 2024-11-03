@@ -10,9 +10,9 @@
 
 [HOY TRASNOCHE](https://open.spotify.com/show/6C4MdNWQSPhmzBlIVau30e?si=a46908e386a94946) es el único y mejor podcast ~~de cine~~ del mundo. Conducen [Fiorella Sargenti](https://www.instagram.com/fiosargenti) y [Santiago Calori](https://www.instagram.com/sancalori). El [COUNTRY CLUB](https://hoytrasnoche.com/vip/) es el podcast exclusivo para subscriptores.
 
-El sitio web contiene los episodios, fecha de publicación y duración, junto con la película comentada, y los links para escuchar los episodios.
+El sitio web consiste de una tabla con datos de los episodios: nombre, fecha de publicación, duración y link para escucharlo; y de las películas: nombre, año de estreno y link a Letterboxd.
 
-La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración, fecha de publicación y nombre de película, o realizar una búsqueda por nombre de episodio/película.
+La tabla es interactiva, por lo que se puede ordenar por número de episodio, duración y fecha de publicación, o realizar una búsqueda por nombre de episodio/película.
 
 <span align="center">
 
