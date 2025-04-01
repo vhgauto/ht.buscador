@@ -1,4 +1,3 @@
-
 # paquetes ----------------------------------------------------------------
 
 library(reactable)
@@ -193,7 +192,7 @@ ht_contenido_cc <- sum(country_club$duracion_ms) / 1000 / 3600 / 24
 ht_contenido <- ht_contenido_ht + ht_contenido_cc
 
 ht_dias <- floor(ht_contenido)
-ht_horas <- round((ht_contenido - ht_dias)*24)
+ht_horas <- round((ht_contenido - ht_dias) * 24)
 
 ht_dias_label <- glue("<b style='color:{cr}'>{ht_dias}</b>")
 if (ht_horas == 1) {
@@ -217,7 +216,6 @@ ht_peliculas_label <- glue("<b style='color:{cr}'>{ht_peliculas}</b>")
 
 # función para dar formato a la duración de los episodios
 f_duracion <- function(value, index) {
-
   minutos <- round(value / 1000 / 60)
   dur_h <- floor(minutos / 60)
   dur_m <- minutos - dur_h * 60
@@ -230,41 +228,32 @@ f_duracion <- function(value, index) {
   )
 
   if (d$tipo[index] == "pago") {
-
     dur_label_icono <- glue(
       "{icono_reloj_cc} <span style='color:{ca}'>{dur_label}</span>"
     )
     return(dur_label_icono)
-
   } else {
-
     dur_label <- str_replace(dur_label, ":", dos_puntos)
     dur_label_icono <- glue("{icono_reloj} {dur_label}")
     return(dur_label_icono)
-
   }
 }
 
 # función para dar formato a la fecha de los episodios
 f_fecha <- function(value, index) {
-
   fecha_label <- format(value, glue("%d/%b/%Y")) |>
     toupper() |>
     str_remove("\\.")
 
   if (d$tipo[index] == "pago") {
-
     fecha_label_icono <- glue(
       "{icono_calendario_cc} <span style='color:{ca}'>{fecha_label}</span>"
     )
     return(fecha_label_icono)
-
   } else {
-
     fecha_label <- str_replace_all(fecha_label, "/", barras)
     fecha_label_icono <- glue("{icono_calendario} {fecha_label}")
     return(fecha_label_icono)
-
   }
 }
 
@@ -272,11 +261,11 @@ f_fecha <- function(value, index) {
 f_pelicula <- function(value, index) {
   # link de la película en Letterboxd
   v_link <- d |>
-  filter(nro == index) |>
-  select(link_letterboxd) |>
-  pull() |>
-  str_split(pattern = "<br>") |>
-  list_c()
+    filter(nro == index) |>
+    select(link_letterboxd) |>
+    pull() |>
+    str_split(pattern = "<br>") |>
+    list_c()
 
   # nombre de la película
   v_pelicula <- d |>
@@ -295,23 +284,19 @@ f_pelicula <- function(value, index) {
     list_c()
 
   if (d$tipo[index] == "pago") {
-
     label <- glue(
       "<a target='_blank' href={v_link}>{icono_movie_cc} ",
       "<span style='color:{ca}'>{v_pelicula} ({v_pelicula_año})</span> </a>"
     )
     l <- str_flatten(label, collapse = "<br>")
     return(l)
-
   } else {
-
     label <- glue(
       "<a target='_blank' href={v_link}>{icono_movie} {v_pelicula} ",
       "{parentesis_i}{v_pelicula_año}{parentesis_d}</a>"
     )
     l <- str_flatten(label, collapse = "<br>")
     return(l)
-
   }
 }
 
@@ -320,24 +305,19 @@ f_episodio <- function(value, index) {
   link <- d$episodio_url[index]
 
   if (d$tipo[index] == "pago") {
-
     label <- glue(
       "<a target='_blank' href={link}>{icono_play_cc} ",
       "<span style='color:{ca}'>{value}</span> </a>"
     )
     return(label)
-
   } else {
-
     label <- glue("<a target='_blank' href={link}>{icono_play} {value}</a>")
     return(label)
-
   }
 }
 
 # función que agrega formato a los números
 f_numero <- function(value, index) {
-
   n <- value
 
   if (nchar(value) == 1) {
@@ -349,15 +329,11 @@ f_numero <- function(value, index) {
   }
 
   if (d$tipo[index] == "pago") {
-
     label <- glue("<span style='color: {ca}'>#{n}</span>")
     return(label)
-
   } else {
-
     label <- glue("<span style='color: {cr}'>#</span>{n}")
     return(label)
-
   }
 }
 
@@ -365,7 +341,6 @@ f_numero <- function(value, index) {
 # las imágenes del Country Club con borde amarillo
 f_imagen <- function(value, index) {
   if (d$tipo[index] == "pago") {
-
     image <- img(
       src = value,
       style = glue("height: 200px; border:5px solid {ca};"),
@@ -374,10 +349,9 @@ f_imagen <- function(value, index) {
 
     tagList(div(style = "display: inline-block", image))
   } else {
-
     image <- img(
       src = value,
-      style = glue("height: 200px"),
+      style = glue("height: 200px; border:5px solid transparent;"),
       alt = value
     )
 
@@ -387,15 +361,10 @@ f_imagen <- function(value, index) {
 
 # función para cambiar el fondo de las celdas con imágenes
 f_image_fondo <- function(value, index) {
-
   if (d$tipo[index] == "pago") {
-
     list(border = glue("10px solid {ca}"))
-
   } else {
-
     list(background = "transparent")
-
   }
 }
 
