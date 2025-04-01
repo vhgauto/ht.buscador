@@ -1,4 +1,5 @@
 test.*
+renv/
 
 # History files
 .Rhistory
