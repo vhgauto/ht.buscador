@@ -377,7 +377,7 @@ f_imagen <- function(value, index) {
 
     image <- img(
       src = value,
-      style = glue("height: 200px"),
+      style = glue("height: 200px; border:5px solid transparent;"),
       alt = value
     )
 
