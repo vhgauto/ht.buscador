@@ -51,7 +51,7 @@ offset = 0
 # loop
 while offset < total:
   results = sp.show_episodes(ht_id, limit = 50, offset = offset, market = None)
-  total = 800
+  total = 2000
   offset += 50 # aumento del offset
   for i, item in enumerate(results['items']):
     episodio = item['name']
