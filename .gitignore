@@ -1,4 +1,5 @@
 test.*
+SPOTIPY_REFRESH_TOKEN.R
 
 # History files
 .Rhistory
